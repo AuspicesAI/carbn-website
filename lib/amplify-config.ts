@@ -27,16 +27,12 @@ const amplifyConfig = {
           redirectSignIn: parseList(
             process.env.NEXT_PUBLIC_COGNITO_REDIRECT_SIGNIN,
             [
-              'https://auspicesai.com/accounts/cognito/callback/',
-              'https://auspicesai.com',
               'https://www.auspicesai.com/accounts/cognito/callback/',
-              'https://www.auspicesai.com',
             ],
           ),
           redirectSignOut: parseList(
             process.env.NEXT_PUBLIC_COGNITO_REDIRECT_SIGNOUT,
             [
-              'https://auspicesai.com/',
               'https://www.auspicesai.com/',
             ],
           ),

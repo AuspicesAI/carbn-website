@@ -3,11 +3,20 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/lib/auth-context';
+import { fetchAuthSession } from 'aws-amplify/auth';
 import '@/lib/amplify-config';
 
 export default function CognitoCallbackPage() {
   const router = useRouter();
   const { user, isLoading, refreshUser } = useAuth();
+
+  useEffect(() => {
+    // Trigger session fetch which ensures OAuth response is processed
+    fetchAuthSession().finally(() => {
+      // After session attempt, refresh user state
+      refreshUser().catch(() => undefined);
+    });
+  }, [refreshUser]);
 
   useEffect(() => {
     // Ensure user state picks up after OAuth redirect
