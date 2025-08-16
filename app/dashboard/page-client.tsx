@@ -13,7 +13,7 @@ export function PageClient() {
   const [teamDisplayName, setTeamDisplayName] = React.useState("");
 
   // Ensure hooks are not called conditionally
-  const teams = user ? user.useTeams() : [];
+  const teams = React.useMemo(() => (user ? user.useTeams() : []), [user]);
 
   // Auto-select first team when available
   React.useEffect(() => {
@@ -63,4 +63,3 @@ export function PageClient() {
 
   return null;
 }
-

@@ -78,7 +78,7 @@ export default function ContactPage() {
               {/* <GlassyIcon icon={<FaCheckCircle />} size="xl" className="mx-auto mb-6" /> */}
               <GradientHeading size="lg" className="mb-4">Message Sent!</GradientHeading>
               <p className="text-xl text-muted-foreground mb-6">
-                Thank you for contacting us. We'll get back to you within 24 hours.
+                Thank you for contacting us. We’ll get back to you within 24 hours.
               </p>
               <Button onClick={() => setIsSubmitted(false)} variant="outline">
                 Send Another Message
@@ -98,7 +98,7 @@ export default function ContactPage() {
           <GlassSection className="max-w-4xl mx-auto p-8 md:p-12 text-center">
             <GradientHeading size="lg">Contact Us</GradientHeading>
             <p className="text-xl text-muted-foreground mt-4">
-              Have a question? Send us a message and we'll get back to you as soon as possible.
+              Have a question? Send us a message and we’ll get back to you as soon as possible.
             </p>
           </GlassSection>
         </Container>
@@ -205,7 +205,7 @@ export default function ContactPage() {
                     <div>
                       <h4 className="font-semibold mb-1">Email</h4>
                       <p className="text-muted-foreground">contact@auspicesai.com</p>
-                      <p className="text-sm text-muted-foreground">We'll respond within 24 hours</p>
+                      <p className="text-sm text-muted-foreground">We’ll respond within 24 hours</p>
                     </div>
                   </div>
                   

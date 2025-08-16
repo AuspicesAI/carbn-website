@@ -30,7 +30,7 @@ export const TeamMember: React.FC<TeamMemberProps> = ({
       <div className="flex lg:flex-row sm:flex-col sm:text-center sm:items-center gap-6 mb-5 pb-5 border-b border-border">
         <img
           src={imageSrc}
-          alt={`${name}'s profile`}
+          alt={`${name}’s profile`}
           className="rounded-2xl object-cover w-24 h-auto"
         />
         <div>

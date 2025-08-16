@@ -9,18 +9,18 @@ const blogPosts = [
     id: "ai-cybersecurity-future",
     title: "The Future of AI in Cybersecurity",
     excerpt: "Exploring how artificial intelligence is revolutionizing the cybersecurity landscape and what it means for businesses.",
-    date: "2024-01-15",
+    date: "2025-08-16",
     author: "Yousef Musabeh",
-    readTime: "5 min read",
+    readTime: "2 min read",
     tags: ["AI", "Cybersecurity", "Future Tech"]
   },
   {
     id: "zero-trust-architecture",
     title: "Implementing Zero Trust Architecture in Modern Organizations",
     excerpt: "A comprehensive guide to understanding and implementing zero trust security models in today's digital landscape.",
-    date: "2024-01-10",
+    date: "2025-08-01",
     author: "Saud Smadi",
-    readTime: "8 min read",
+    readTime: "4 min read",
     tags: ["Zero Trust", "Security", "Architecture"]
   }
 ];

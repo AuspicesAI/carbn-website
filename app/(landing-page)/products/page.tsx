@@ -155,7 +155,7 @@ export default function ProductsPage() {
           <GlassSection className="max-w-4xl mx-auto p-8 md:p-12 text-center">
             <GradientHeading size="md" className="mb-4">Ready to Secure Your Future?</GradientHeading>
             <p className="text-lg text-muted-foreground mb-6">
-              Have a specific concern? We're ready to build a custom solution immediately.
+              Have a specific concern? We’re ready to build a custom solution immediately.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="group">
