@@ -4,6 +4,7 @@ import "./globals.css";
 import { Provider } from "./provider";
 import { AuthProvider } from "@/lib/auth-context";
 import "@/lib/amplify-config";
+import { GlassBackground } from "@/components/ui/glass-background";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,11 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <Provider>
-          <AuthProvider>
-            {children}
-          </AuthProvider>
-        </Provider>
+        <GlassBackground>
+          <Provider>
+            <AuthProvider>
+              {children}
+            </AuthProvider>
+          </Provider>
+        </GlassBackground>
       </body>
     </html>
   );

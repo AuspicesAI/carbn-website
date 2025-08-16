@@ -15,10 +15,10 @@ export function Hero(props: {
 }) {
   return (
     <section className="space-y-6 py-32 md:py-48 lg:py-52">
-      <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
+      <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center justify-center min-h-[60vh]">
         <Link
           href={props.capsuleLink}
-          className="rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium"
+          className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 dark:bg-white/5 backdrop-blur-xl border border-white/10 dark:border-white/10 text-foreground text-sm font-medium hover:bg-white/10 dark:hover:bg-white/10 transition-all duration-300"
           target="_blank"
         >
           {props.capsuleText}

@@ -25,22 +25,22 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors duration-200">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/products" className="text-muted-foreground hover:text-primary transition-colors duration-200">
                   Products
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors duration-200">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors duration-200">
                   Contact Us
                 </Link>
               </li>
@@ -55,7 +55,7 @@ export function Footer() {
                 href="https://linkedin.com/company/auspicesai"
                 target="_blank"
                 rel="noreferrer"
-                className={buttonVariants({ variant: "ghost", size: "sm" })}
+                className="inline-flex items-center justify-center h-9 w-9 rounded-xl text-foreground hover:bg-black/20 dark:hover:bg-white/20 backdrop-blur-2xl hover:shadow-[0_8px_32px_rgba(0,0,0,0.2)] transition-all duration-200"
               >
                 <LinkedInLogoIcon className="h-4 w-4" />
               </Link>
@@ -63,7 +63,7 @@ export function Footer() {
                 href="https://github.com/auspicesai"
                 target="_blank"
                 rel="noreferrer"
-                className={buttonVariants({ variant: "ghost", size: "sm" })}
+                className="inline-flex items-center justify-center h-9 w-9 rounded-xl text-foreground hover:bg-black/20 dark:hover:bg-white/20 backdrop-blur-2xl hover:shadow-[0_8px_32px_rgba(0,0,0,0.2)] transition-all duration-200"
               >
                 <GitHubLogoIcon className="h-4 w-4" />
               </Link>
@@ -77,10 +77,10 @@ export function Footer() {
             © {new Date().getFullYear()} AuspicesAI. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
               Terms of Service
             </Link>
           </div>

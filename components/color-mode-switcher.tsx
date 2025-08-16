@@ -22,7 +22,7 @@ export function ColorModeSwitcher() {
         variant="ghost"
         size="icon"
         onClick={() => setTheme("light")}
-        className="hidden dark:flex"
+        className="hidden dark:inline-flex"
       >
         <Sun />
       </Button>

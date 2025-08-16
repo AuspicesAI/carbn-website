@@ -1,8 +1,12 @@
-import { FeatureGrid } from "@/components/features";
 import { Hero } from "@/components/hero";
-import { PricingGrid } from "@/components/pricing";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
-import { ComponentIcon, Users } from "lucide-react";
+import { GradientHeading } from "@/components/ui/gradient-heading";
+import { Button } from "@/components/ui/button";
+import { FeatureCard } from "@/components/ui/feature-card";
+import { ProductShowcase } from "@/components/ui/product-showcase";
+import { BrowserMockup } from "@/components/ui/browser-mockup";
+import { CTASection } from "@/components/ui/cta-section";
+import { Shield, Zap, Eye, Target, ArrowRight, ExternalLink } from "lucide-react";
+import Link from "next/link";
 
 export default function IndexPage() {
 
@@ -24,142 +28,129 @@ export default function IndexPage() {
         }
       />
 
-      <div id="features" />
-      <FeatureGrid
-        title="Features"
-        subtitle="Unlock powerful capabilities for your project."
-        items={[
-          {
-            icon: (
-              <svg viewBox="0 0 24 24" className="h-12 w-12 fill-current">
-                <path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 0 1-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 0 0-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 0 0-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 0 1-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 0 1-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 0 1 .174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 0 0 4.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 0 0 2.466-2.163 11.944 11.944 0 0 0 2.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.859-8.292-8.208-9.695a12.597 12.597 0 0 0-2.499-.523A33.119 33.119 0 0 0 11.573 0zm4.069 7.217c.347 0 .408.005.486.047a.473.473 0 0 1 .237.277c.018.06.023 1.365.018 4.304l-.006 4.218-.744-1.14-.746-1.14v-3.066c0-1.982.01-3.097.023-3.15a.478.478 0 0 1 .233-.296c.096-.05.13-.054.5-.054z" />
-              </svg>
-            ),
-            title: "Next.js 14",
-            description:
-              "Utilize the latest features: App Router, Layouts, Suspense.",
-          },
-          {
-            icon: (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 256 256"
-                className="h-12 w-12 fill-current"
-              >
-                <rect width="256" height="256" fill="none"></rect>
-                <line
-                  x1="208"
-                  y1="128"
-                  x2="128"
-                  y2="208"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="22"
-                ></line>
-                <line
-                  x1="192"
-                  y1="40"
-                  x2="40"
-                  y2="192"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="22"
-                ></line>
-              </svg>
-            ),
-            title: "Shadcn UI",
-            description:
-              "Modern and fully customizable UI components based on Tailwind CSS.",
-          },
-          {
-            icon: (
-              <svg
-                width="201"
-                height="242"
-                viewBox="0 0 201 242"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-12 w-12 fill-current"
-              >
-                <path d="M104.004 1.78785C101.751 0.662376 99.1002 0.663161 96.8483 1.78998L4.9201 47.7892C2.21103 49.1448 0.5 51.9143 0.5 54.9436V130.526C0.5 133.556 2.2123 136.327 4.92292 137.682L96.9204 183.67C99.1725 184.796 101.823 184.796 104.075 183.67L168.922 151.246C174.242 148.587 180.5 152.455 180.5 158.402V168.855C180.5 171.885 178.788 174.655 176.078 176.01L104.077 212.011C101.825 213.137 99.1745 213.137 96.9224 212.012L12.0771 169.598C6.75791 166.939 0.5 170.807 0.5 176.754V187.048C0.5 190.083 2.21689 192.856 4.93309 194.209L97.0051 240.072C99.2529 241.191 101.896 241.191 104.143 240.07L196.071 194.21C198.785 192.857 200.5 190.084 200.5 187.052V119.487C200.5 113.54 194.242 109.672 188.922 112.332L132.078 140.754C126.758 143.414 120.5 139.546 120.5 133.599V123.145C120.5 120.115 122.212 117.345 124.922 115.99L196.078 80.4124C198.788 79.0573 200.5 76.2872 200.5 73.257V54.9468C200.5 51.9158 198.787 49.1451 196.076 47.7904L104.004 1.78785Z" />
-              </svg>
-            ),
-            title: "Stack Auth",
-            description:
-              "Comprehensive Authentication: OAuth, User Management, and more.",
-          },
-          {
-            icon: <Users className="h-12 w-12" />,
-            title: "Multi-tenancy & RBAC",
-            description: "Built-in Teams and Permissions.",
-          },
-          {
-            icon: <GitHubLogoIcon className="h-12 w-12" />,
-            title: "100% Open-source",
-            description: "Open-source and self-hostable codebase.",
-          },
-          {
-            icon: <ComponentIcon className="h-12 w-12" />,
-            title: "Modular Design",
-            description: "Easily extend and customize. No spaghetti code.",
-          },
-        ]}
-      />
+      {/* Why Choose Us Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <GradientHeading className="mb-6">Why AI Security Matters Now</GradientHeading>
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              As AI tools become more sophisticated, so do the threats. Stay ahead with defensive solutions built by security experts.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <FeatureCard
+              icon={<Shield className="w-8 h-8 text-primary" />}
+              title="Advanced Threat Detection"
+              description="Identify AI-generated malware and sophisticated attack vectors before they compromise your systems."
+            />
+            
+            <FeatureCard
+              icon={<Zap className="w-8 h-8 text-primary" />}
+              title="Real-Time Analysis"
+              description="Get instant insights with our automated analysis platform that works 24/7 to keep you protected."
+            />
+            
+            <FeatureCard
+              icon={<Eye className="w-8 h-8 text-primary" />}
+              title="Deep Visibility"
+              description="Understand exactly what threats are targeting your organization with detailed forensic analysis."
+            />
+            
+            <FeatureCard
+              icon={<Target className="w-8 h-8 text-primary" />}
+              title="Precision Defense"
+              description="Custom solutions tailored to your specific security challenges and threat landscape."
+            />
+          </div>
+        </div>
+      </section>
 
-      <div id="pricing" />
-      <PricingGrid
-        title="Pricing"
-        subtitle="Flexible plans for every team."
-        items={[
-          {
-            title: "Basic",
-            price: "Free",
-            description: "For individuals and small projects.",
-            features: [
-              "Full source code",
-              "100% Open-source",
-              "Community support",
-              "Free forever",
-              "No credit card required",
-            ],
-            buttonText: "Get Started",
-            buttonHref: "/auth/signup",
-          },
-          {
-            title: "Pro",
-            price: "$0.00",
-            description: "Ideal for growing teams and businesses.",
-            features: [
-              "Full source code",
-              "100% Open-source",
-              "Community support",
-              "Free forever",
-              "No credit card required",
-            ],
-            buttonText: "Upgrade to Pro",
-            isPopular: true,
-            buttonHref: "/auth/signup",
-          },
-          {
-            title: "Enterprise",
-            price: "Still Free",
-            description: "For large organizations.",
-            features: [
-              "Full source code",
-              "100% Open-source",
-              "Community support",
-              "Free forever",
-              "No credit card required",
-            ],
-            buttonText: "Contact Us",
-            buttonHref: "/auth/signup",
-          },
-        ]}
-      />
+      {/* Featured Product Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <ProductShowcase
+              badge="Featured Product"
+              title="Automated Malware Analysis Platform"
+              description="Upload suspicious files and get comprehensive analysis reports in minutes. Our AI-powered sandbox environment safely executes and analyzes malware to extract IOCs, behaviors, and threat intelligence."
+              features={[
+                {
+                  title: "Automated Payload Extraction",
+                  description: "Advanced deobfuscation and unpacking techniques"
+                },
+                {
+                  title: "Behavioral Analysis",
+                  description: "Isolated sandbox environment with full monitoring"
+                },
+                {
+                  title: "Threat Intelligence",
+                  description: "IOC extraction and YARA rule generation"
+                }
+              ]}
+              primaryAction={
+                <Button size="lg" className="text-lg px-8 py-4" asChild>
+                  <Link href="https://sandbox.auspicesai.com" target="_blank" rel="noopener noreferrer">
+                    Try Free Sandbox <ExternalLink className="w-5 h-5 ml-2" />
+                  </Link>
+                </Button>
+              }
+              secondaryAction={
+                <Button variant="outline" size="lg" className="text-lg px-8 py-4" asChild>
+                  <Link href="/products">
+                    Learn More <ArrowRight className="w-5 h-5 ml-2" />
+                  </Link>
+                </Button>
+              }
+              mockup={<BrowserMockup />}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <CTASection
+              badge="Start Your Security Journey"
+              title="Ready to Secure Your Digital Assets?"
+              description="Don't take our word for it, try it out for yourself."
+              primaryAction={
+                <Button size="lg" className="text-lg px-10 py-5" asChild>
+                  <Link href="https://sandbox.auspicesai.com" target="_blank" rel="noopener noreferrer">
+                    Start Free Analysis <ExternalLink className="w-5 h-5 ml-2" />
+                  </Link>
+                </Button>
+              }
+              secondaryAction={
+                <Button variant="outline" size="lg" className="text-lg px-10 py-5" asChild>
+                  <Link href="/contact">
+                    Get Custom Solution <ArrowRight className="w-5 h-5 ml-2" />
+                  </Link>
+                </Button>
+              }
+              stats={[
+                {
+                  value: "✨",
+                  label: "Free to Use",
+                  sublabel: "No hidden costs or limitations"
+                },
+                {
+                  value: "⚙️",
+                  label: "Automated Analysis",
+                  sublabel: "Upload files and leave it to us"
+                },
+                {
+                  value: "🤖",
+                  label: "AI Powered",
+                  sublabel: "Ask questions and get answers"
+                }
+              ]}
+            />
+          </div>
+        </div>
+      </section>
     </>
   );
 }

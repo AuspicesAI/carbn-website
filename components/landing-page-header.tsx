@@ -74,7 +74,7 @@ function MobileItems(props: NavProps) {
               key={index}
               href={item.disabled ? "#" : item.href}
               className={cn(
-                "flex w-full items-center rounded-md p-2 text-sm font-medium hover:underline",
+                "flex w-full items-center rounded-md p-2 text-sm font-medium hover:text-primary hover:bg-accent/50 transition-colors duration-200",
                 item.disabled && "cursor-not-allowed opacity-60"
               )}
               target={item.external ? "_blank" : undefined}
@@ -103,10 +103,10 @@ function DesktopItems(props: NavProps) {
           key={index}
           href={item.disabled ? "#" : item.href}
           className={cn(
-            "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm",
+            "flex items-center text-lg font-medium transition-colors duration-200 hover:text-primary sm:text-sm",
             item.href.startsWith(`/${segment}`)
-              ? "text-foreground"
-              : "text-foreground/60",
+              ? "text-primary font-semibold"
+              : "text-foreground/70",
             item.disabled && "cursor-not-allowed opacity-80"
           )}
           target={item.external ? "_blank" : undefined}

@@ -1,14 +1,15 @@
+import { GradientHeading } from "@/components/ui/gradient-heading";
+import { GlassSection } from "@/components/ui/glass-section";
+
 export default function ContactPage() {
   return (
     <div className="container mx-auto px-4 py-16">
-      <div className="max-w-4xl mx-auto text-center">
-        <h1 className="text-4xl font-bold tracking-tight mb-6">
-          Contact Us
-        </h1>
-        <p className="text-xl text-muted-foreground">
-        Have a question? Contact us now!
+      <GlassSection className="max-w-4xl mx-auto p-8 md:p-12 text-center">
+        <GradientHeading size="lg">Contact Us</GradientHeading>
+        <p className="text-xl text-muted-foreground mt-4">
+          Have a question? Contact us now!
         </p>
-      </div>
+      </GlassSection>
     </div>
   );
 }
