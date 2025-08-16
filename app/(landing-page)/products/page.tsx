@@ -58,7 +58,12 @@ export default function ProductsPage() {
                         <FaArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
-                    <Button variant="outline" size="lg" asChild>
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      asChild
+                      className="dark:shadow-none hover:dark:shadow-none"
+                    >
                       <Link href="/products/auspicesai-sandbox">
                         Learn More
                       </Link>

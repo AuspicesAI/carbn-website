@@ -22,7 +22,6 @@ export default function IndexPage() {
     <>
       <Hero
         capsuleText="Defensive solutions that keep you protected"
-        capsuleLink="https://auspicesai.com"
         title="Security That Is Not Artificial"
         subtitle="Concerned about AI tools such as code generating models being used to breach your security?"
         primaryCtaText="Try Free Malware Sandbox"
@@ -110,18 +109,6 @@ export default function IndexPage() {
                   </Link>
                 </Button>
               }
-              secondaryAction={
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="text-lg px-8 py-4"
-                  asChild
-                >
-                  <Link href="/products">
-                    Learn More <ArrowRight className="w-5 h-5 ml-2" />
-                  </Link>
-                </Button>
-              }
               mockup={<BrowserMockup />}
             />
           </div>
@@ -152,12 +139,10 @@ export default function IndexPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg px-10 py-5"
+                  className="text-lg px-10 py-5 dark:shadow-none hover:dark:shadow-none"
                   asChild
                 >
-                  <Link href="/contact">
-                    Get Custom Solution <ArrowRight className="w-5 h-5 ml-2" />
-                  </Link>
+                  <Link href="/contact">Contact Us</Link>
                 </Button>
               }
               stats={[

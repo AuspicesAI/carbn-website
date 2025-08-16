@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/container";
 
 export function Footer() {
   return (
-    <footer className="border-t bg-background">
+    <footer className="border-t bg-background-600">
       <Container className="py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}

@@ -22,7 +22,13 @@ const config = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
+        background: {
+          DEFAULT: "hsl(var(--background))",
+          700: "hsl(var(--background) / 0.7)", // 70% opacity
+          600: "hsl(var(--background) / 0.6)", // 60% opacity
+          500: "hsl(var(--background) / 0.5)", // 50% opacity
+          300: "hsl(var(--background) / 0.3)", // 30% opacity
+        },
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",

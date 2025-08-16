@@ -13,10 +13,8 @@ import { GlassyIcon } from "@/components/ui/glassy-icon";
 import {
   FaEnvelope,
   FaUser,
-  FaPhone,
   FaMapMarkerAlt,
   FaPaperPlane,
-  FaCheckCircle,
 } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
@@ -114,7 +112,7 @@ export default function ContactPage() {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <Section spacing="lg">
+      <Section spacing="lg" className="pb-12">
         <Container>
           <GlassSection className="max-w-4xl mx-auto p-8 md:p-12 text-center">
             <GradientHeading size="lg">Contact Us</GradientHeading>
@@ -127,7 +125,7 @@ export default function ContactPage() {
       </Section>
 
       {/* Contact Form & Info */}
-      <Section>
+      <Section className="py-0 pb-24">
         <Container>
           <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -174,6 +172,7 @@ export default function ContactPage() {
                       type="tel"
                       value={formData.phone}
                       onChange={handleChange}
+                      maxLength={19}
                       className="bg-background/50 border-border/50 backdrop-blur-sm"
                       placeholder="+1 (555) 123-4567"
                     />
@@ -187,6 +186,7 @@ export default function ContactPage() {
                       value={formData.subject}
                       onChange={handleChange}
                       required
+                      maxLength={50}
                       className="bg-background/50 border-border/50 backdrop-blur-sm"
                       placeholder="How can we help?"
                     />
@@ -202,6 +202,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     rows={6}
+                    maxLength={1500}
                     className="bg-background/50 border-border/50 backdrop-blur-sm resize-none"
                     placeholder="Tell us about your cybersecurity needs or any questions you have..."
                   />
@@ -230,9 +231,13 @@ export default function ContactPage() {
                     <GlassyIcon icon={<FaEnvelope />} size="sm" />
                     <div>
                       <h4 className="font-semibold mb-1">Email</h4>
-                      <p className="text-muted-foreground">
+                      <a
+                        href="mailto:contact@auspicesai.com"
+                        className="text-muted-foreground underline hover:text-primary transition-colors"
+                        aria-label="Send email to contact@auspicesai.com"
+                      >
                         contact@auspicesai.com
-                      </p>
+                      </a>
                       <p className="text-sm text-muted-foreground">
                         We’ll respond within 24 hours
                       </p>

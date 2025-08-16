@@ -11,7 +11,7 @@ interface ProductShowcaseProps {
     description: string;
   }>;
   primaryAction: ReactNode;
-  secondaryAction: ReactNode;
+  secondaryAction?: ReactNode;
   mockup: ReactNode;
   className?: string;
 }
