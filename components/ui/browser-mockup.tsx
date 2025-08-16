@@ -1,4 +1,3 @@
-import { Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface BrowserMockupProps {
@@ -49,12 +48,12 @@ export function BrowserMockup({ url = "sandbox.auspicesai.com", className }: Bro
           {/* Status indicator */}
           <div className="p-3 bg-gradient-to-r from-primary/15 to-purple-600/15 rounded-lg border border-primary/20 backdrop-blur-sm">
             <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-gradient-to-br from-primary to-purple-600 rounded-full flex items-center justify-center">
-                <Shield className="w-2 h-2 text-white" />
-              </div>
+              {/* <div className="w-4 h-4 bg-gradient-to-br from-primary to-purple-600 rounded-full flex items-center justify-center"> */}
+                {/* <Shield className="w-2 h-2 text-white" /> */}
+              {/* </div> */}
               <div>
                 <div className="text-primary font-medium text-xs">Analysis Complete</div>
-                <div className="text-xs text-foreground/70">Threat Detected</div>
+                <div className="text-xs text-foreground/70">Remcos Malware Detected</div>
               </div>
             </div>
           </div>

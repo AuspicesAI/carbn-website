@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { signInWithRedirect } from 'aws-amplify/auth';
+import { Button } from '@/components/ui/button';
 import '@/lib/amplify-config';
 
 export default function SignUpPage() {
@@ -19,23 +20,23 @@ export default function SignUpPage() {
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8 bg-white/15 dark:bg-white/5 backdrop-blur-xl border border-white/25 dark:border-white/10 rounded-3xl p-8 shadow-[0_8px_32px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.15)] dark:shadow-lg dark:shadow-black/5">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Redirecting to secure sign-up
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-foreground">
+            Redirecting to sign-up
           </h2>
         </div>
         <div className="mt-8 space-y-6 text-center">
-          <p className="text-gray-600">You are being redirected to the AuspicesAI secure sign-up page...</p>
-          <button
+          <p className="text-muted-foreground">You are being redirected to the AuspicesAI sign-up page...</p>
+          <Button
             type="button"
             onClick={() => signInWithRedirect()}
             disabled={isRedirecting}
-            className="inline-flex items-center justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50"
+            size="lg"
           >
             {isRedirecting ? 'Redirecting…' : 'Go to Sign Up'}
-          </button>
+          </Button>
         </div>
       </div>
     </div>

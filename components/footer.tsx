@@ -1,16 +1,13 @@
-import { buttonVariants } from "@/components/ui/button";
-import {
-  GitHubLogoIcon,
-  LinkedInLogoIcon,
-  TwitterLogoIcon,
-} from "@radix-ui/react-icons";
 import Link from "next/link";
+import { LinkedInLogoIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
+import { SocialButton } from "@/components/ui/social-button";
 import { Logo } from "./logo";
+import { Container } from "@/components/ui/container";
 
 export function Footer() {
   return (
     <footer className="border-t bg-background">
-      <div className="container mx-auto px-4 py-8">
+      <Container className="py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
@@ -51,22 +48,20 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Connect</h3>
             <div className="flex space-x-2">
-              <Link
+              <SocialButton
                 href="https://linkedin.com/company/auspicesai"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center h-9 w-9 rounded-xl text-foreground hover:bg-black/20 dark:hover:bg-white/20 backdrop-blur-2xl hover:shadow-[0_8px_32px_rgba(0,0,0,0.2)] transition-all duration-200"
               >
                 <LinkedInLogoIcon className="h-4 w-4" />
-              </Link>
-              <Link
+              </SocialButton>
+              <SocialButton
                 href="https://github.com/auspicesai"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center h-9 w-9 rounded-xl text-foreground hover:bg-black/20 dark:hover:bg-white/20 backdrop-blur-2xl hover:shadow-[0_8px_32px_rgba(0,0,0,0.2)] transition-all duration-200"
               >
                 <GitHubLogoIcon className="h-4 w-4" />
-              </Link>
+              </SocialButton>
             </div>
           </div>
         </div>
@@ -85,7 +80,8 @@ export function Footer() {
             </Link>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }
+

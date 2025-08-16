@@ -18,7 +18,7 @@ export function Hero(props: {
       <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center justify-center min-h-[60vh]">
         <Link
           href={props.capsuleLink}
-          className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 dark:bg-white/5 backdrop-blur-xl border border-white/10 dark:border-white/10 text-foreground text-sm font-medium hover:bg-white/10 dark:hover:bg-white/10 transition-all duration-300"
+          className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-100/15 via-white/15 to-purple-100/15 dark:bg-gradient-to-r dark:from-purple-800/8 dark:via-white/5 dark:to-purple-800/8 backdrop-blur-xl border border-purple-300/50 dark:border-purple-400/25 text-foreground text-sm font-medium hover:bg-gradient-to-r hover:from-purple-100/20 hover:via-white/20 hover:to-purple-100/20 dark:hover:bg-gradient-to-r dark:hover:from-purple-800/12 dark:hover:via-white/10 dark:hover:to-purple-800/12 transition-all duration-300 shadow-[0_8px_32px_rgba(147,51,234,0.1),0_8px_32px_rgba(255,255,255,0.08)] dark:shadow-[0_8px_32px_rgba(147,51,234,0.15)]"
           target="_blank"
         >
           {props.capsuleText}

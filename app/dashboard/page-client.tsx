@@ -12,15 +12,24 @@ export function PageClient() {
   const user = useUser({ or: "redirect" });
   const [teamDisplayName, setTeamDisplayName] = React.useState("");
 
-  if (!user) return null;
+  // Ensure hooks are not called conditionally
+  const teams = user ? user.useTeams() : [];
 
-  const teams = user.useTeams();
-
+  // Auto-select first team when available
   React.useEffect(() => {
-    if (teams.length > 0 && !user.selectedTeam) {
+    if (user && teams.length > 0 && !user.selectedTeam) {
       user.setSelectedTeam(teams[0]);
     }
-  }, [teams, user]);
+  }, [user, teams]);
+
+  // Navigate to selected team dashboard
+  React.useEffect(() => {
+    if (user?.selectedTeam) {
+      router.push(`/dashboard/${user.selectedTeam.id}`);
+    }
+  }, [router, user?.selectedTeam]);
+
+  if (!user) return null;
 
   if (teams.length === 0) {
     return (
@@ -50,9 +59,8 @@ export function PageClient() {
         </div>
       </div>
     );
-  } else if (user.selectedTeam) {
-    router.push(`/dashboard/${user.selectedTeam.id}`);
   }
 
   return null;
 }
+
