@@ -3,8 +3,8 @@
  * Provides modular, reusable authentication functions following best practices
  */
 
-import { signIn, signUp, signOut, getCurrentUser } from 'aws-amplify/auth';
-import { sanitizeAuthError, handleAuthError } from './auth-errors';
+import { signIn, signUp, signOut, getCurrentUser } from "aws-amplify/auth";
+import { sanitizeAuthError, handleAuthError } from "./auth-errors";
 
 // Types for better type safety
 export interface SignUpData {
@@ -30,32 +30,32 @@ export interface AuthResult {
 export async function registerUser(userData: SignUpData): Promise<AuthResult> {
   try {
     const { email, name, password } = userData;
-    
+
     // Input validation
     if (!email || !name || !password) {
       return {
         success: false,
-        error: 'All fields are required.',
+        error: "All fields are required.",
       };
     }
-    
+
     // Email format validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return {
         success: false,
-        error: 'Please enter a valid email address.',
+        error: "Please enter a valid email address.",
       };
     }
-    
+
     // Password strength validation
     if (password.length < 8) {
       return {
         success: false,
-        error: 'Password must be at least 8 characters long.',
+        error: "Password must be at least 8 characters long.",
       };
     }
-    
+
     const result = await signUp({
       username: email,
       password,
@@ -66,15 +66,14 @@ export async function registerUser(userData: SignUpData): Promise<AuthResult> {
         },
       },
     });
-    
+
     return {
       success: true,
       user: result,
     };
-    
   } catch (error: any) {
     const errorHandler = handleAuthError(error);
-    
+
     return {
       success: false,
       error: errorHandler.message,
@@ -85,31 +84,32 @@ export async function registerUser(userData: SignUpData): Promise<AuthResult> {
 /**
  * Secure user authentication with sanitized error handling
  */
-export async function authenticateUser(credentials: SignInData): Promise<AuthResult> {
+export async function authenticateUser(
+  credentials: SignInData,
+): Promise<AuthResult> {
   try {
     const { email, password } = credentials;
-    
+
     // Input validation
     if (!email || !password) {
       return {
         success: false,
-        error: 'Email and password are required.',
+        error: "Email and password are required.",
       };
     }
-    
+
     const result = await signIn({
       username: email,
       password,
     });
-    
+
     return {
       success: true,
       user: result,
     };
-    
   } catch (error: any) {
     const errorHandler = handleAuthError(error);
-    
+
     return {
       success: false,
       error: errorHandler.message,
@@ -123,11 +123,10 @@ export async function authenticateUser(credentials: SignInData): Promise<AuthRes
 export async function logoutUser(): Promise<AuthResult> {
   try {
     await signOut();
-    
+
     return {
       success: true,
     };
-    
   } catch (error: any) {
     return {
       success: false,
@@ -142,12 +141,11 @@ export async function logoutUser(): Promise<AuthResult> {
 export async function getCurrentAuthUser(): Promise<AuthResult> {
   try {
     const user = await getCurrentUser();
-    
+
     return {
       success: true,
       user,
     };
-    
   } catch (error: any) {
     return {
       success: false,
@@ -164,39 +162,39 @@ export const AuthValidation = {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   },
-  
+
   password: (password: string): { valid: boolean; message?: string } => {
     if (password.length < 8) {
       return {
         valid: false,
-        message: 'Password must be at least 8 characters long.',
+        message: "Password must be at least 8 characters long.",
       };
     }
-    
+
     if (!/(?=.*[a-z])/.test(password)) {
       return {
         valid: false,
-        message: 'Password must contain at least one lowercase letter.',
+        message: "Password must contain at least one lowercase letter.",
       };
     }
-    
+
     if (!/(?=.*[A-Z])/.test(password)) {
       return {
         valid: false,
-        message: 'Password must contain at least one uppercase letter.',
+        message: "Password must contain at least one uppercase letter.",
       };
     }
-    
+
     if (!/(?=.*\d)/.test(password)) {
       return {
         valid: false,
-        message: 'Password must contain at least one number.',
+        message: "Password must contain at least one number.",
       };
     }
-    
+
     return { valid: true };
   },
-  
+
   name: (name: string): boolean => {
     return name.trim().length >= 2;
   },
@@ -206,39 +204,40 @@ export const AuthValidation = {
  * Rate limiting utilities (client-side basic protection)
  */
 class RateLimiter {
-  private attempts: Map<string, { count: number; lastAttempt: number }> = new Map();
+  private attempts: Map<string, { count: number; lastAttempt: number }> =
+    new Map();
   private maxAttempts = 5;
   private windowMs = 15 * 60 * 1000; // 15 minutes
-  
+
   canAttempt(identifier: string): boolean {
     const now = Date.now();
     const record = this.attempts.get(identifier);
-    
+
     if (!record) {
       this.attempts.set(identifier, { count: 1, lastAttempt: now });
       return true;
     }
-    
+
     // Reset if window has passed
     if (now - record.lastAttempt > this.windowMs) {
       this.attempts.set(identifier, { count: 1, lastAttempt: now });
       return true;
     }
-    
+
     // Check if under limit
     if (record.count < this.maxAttempts) {
       record.count++;
       record.lastAttempt = now;
       return true;
     }
-    
+
     return false;
   }
-  
+
   getRemainingTime(identifier: string): number {
     const record = this.attempts.get(identifier);
     if (!record) return 0;
-    
+
     const now = Date.now();
     const remaining = this.windowMs - (now - record.lastAttempt);
     return Math.max(0, remaining);

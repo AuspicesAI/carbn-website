@@ -1,5 +1,5 @@
-import React from 'react';
-import { FaInstagram, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
+import React from "react";
+import { FaInstagram, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 
 interface SocialMediaLinks {
   instagram?: string;
@@ -17,13 +17,13 @@ interface TeamMemberProps {
   className?: string;
 }
 
-export const TeamMember: React.FC<TeamMemberProps> = ({ 
-  imageSrc, 
-  name, 
-  title, 
-  bio, 
-  socialLinks, 
-  className = "" 
+export const TeamMember: React.FC<TeamMemberProps> = ({
+  imageSrc,
+  name,
+  title,
+  bio,
+  socialLinks,
+  className = "",
 }) => {
   return (
     <div className={`flex flex-col w-full ${className}`}>
@@ -40,40 +40,40 @@ export const TeamMember: React.FC<TeamMemberProps> = ({
           </div>
           <div className="flex items-center gap-2 justify-center lg:justify-start pt-2">
             {socialLinks?.instagram && (
-              <a 
-                href={socialLinks.instagram} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={socialLinks.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="cursor-pointer text-muted-foreground hover:text-primary-foreground group w-8 h-8 shadow-sm border rounded-full flex justify-center items-center bg-background transition-all duration-500 hover:bg-primary"
               >
                 <FaInstagram />
               </a>
             )}
             {socialLinks?.twitter && (
-              <a 
-                href={socialLinks.twitter} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={socialLinks.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="cursor-pointer text-muted-foreground hover:text-primary-foreground group w-8 h-8 shadow-sm border rounded-full flex justify-center items-center bg-background transition-all duration-500 hover:bg-primary"
               >
                 <FaTwitter />
               </a>
             )}
             {socialLinks?.linkedin && (
-              <a 
-                href={socialLinks.linkedin} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="cursor-pointer text-muted-foreground hover:text-primary-foreground group w-8 h-8 shadow-sm border rounded-full flex justify-center items-center bg-background transition-all duration-500 hover:bg-primary"
               >
                 <FaLinkedin />
               </a>
             )}
             {socialLinks?.github && (
-              <a 
-                href={socialLinks.github} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={socialLinks.github}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="cursor-pointer text-muted-foreground hover:text-primary-foreground group w-8 h-8 shadow-sm border rounded-full flex justify-center items-center bg-background transition-all duration-500 hover:bg-primary"
               >
                 <FaGithub />
@@ -83,9 +83,7 @@ export const TeamMember: React.FC<TeamMemberProps> = ({
         </div>
       </div>
       <div className="text-center lg:text-left flex-1">
-        <p className="text-muted-foreground leading-6 mb-7">
-          {bio}
-        </p>
+        <p className="text-muted-foreground leading-6 mb-7">{bio}</p>
       </div>
     </div>
   );

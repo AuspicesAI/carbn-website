@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { useAuth } from '@/lib/auth-context';
-import { fetchAuthSession } from 'aws-amplify/auth';
-import '@/lib/amplify-config';
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/lib/auth-context";
+import { fetchAuthSession } from "aws-amplify/auth";
+import "@/lib/amplify-config";
 
 export default function CognitoCallbackPage() {
   const router = useRouter();
@@ -25,14 +25,16 @@ export default function CognitoCallbackPage() {
       refreshUser().catch(() => undefined);
     }
     if (user) {
-      router.replace('/dashboard');
+      router.replace("/dashboard");
     }
   }, [user, isLoading, refreshUser, router]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full text-center">
-        <h2 className="mt-6 text-2xl font-semibold text-gray-900">Completing sign-in…</h2>
+        <h2 className="mt-6 text-2xl font-semibold text-gray-900">
+          Completing sign-in…
+        </h2>
         <p className="mt-4 text-sm text-gray-600">
           Please wait while we finalize your session.
         </p>

@@ -3,7 +3,12 @@ import { GlassSection } from "@/components/ui/glass-section";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
-import { FaShieldAlt, FaRobot, FaChartLine, FaArrowRight } from 'react-icons/fa';
+import {
+  FaShieldAlt,
+  FaRobot,
+  FaChartLine,
+  FaArrowRight,
+} from "react-icons/fa";
 import Link from "next/link";
 
 export default function ProductsPage() {
@@ -15,7 +20,8 @@ export default function ProductsPage() {
           <GlassSection className="max-w-4xl mx-auto p-8 md:p-12 text-center">
             <GradientHeading size="lg">Our Products</GradientHeading>
             <p className="text-xl text-muted-foreground mt-4">
-              Our products are designed to help you protect your digital assets and infrastructure.
+              Our products are designed to help you protect your digital assets
+              and infrastructure.
             </p>
           </GlassSection>
         </Container>
@@ -36,11 +42,18 @@ export default function ProductsPage() {
                     AuspicesAI Sandbox
                   </GradientHeading>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Upload suspicious files and get comprehensive analysis reports in minutes. Our AI powered sandbox environment safely executes and analyzes malware to extract IOCs, behaviors, and threat intelligence.
+                    Upload suspicious files and get comprehensive analysis
+                    reports in minutes. Our AI powered sandbox environment
+                    safely executes and analyzes malware to extract IOCs,
+                    behaviors, and threat intelligence.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button size="lg" className="group" asChild>
-                      <Link href="https://sandbox.auspicesai.com" target="_blank" rel="noopener noreferrer">
+                      <Link
+                        href="https://sandbox.auspicesai.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         Try It Now
                         <FaArrowRight className="ml-2 h-4 w-4" />
                       </Link>
@@ -59,19 +72,25 @@ export default function ProductsPage() {
                         <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
                           <FaShieldAlt className="w-4 h-4 text-primary" />
                         </div>
-                        <span className="text-sm text-muted-foreground">Automated Payload Extraction</span>
+                        <span className="text-sm text-muted-foreground">
+                          Automated Payload Extraction
+                        </span>
                       </div>
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
                           <FaRobot className="w-4 h-4 text-primary" />
                         </div>
-                        <span className="text-sm text-muted-foreground">Behavioral Analysis</span>
+                        <span className="text-sm text-muted-foreground">
+                          Behavioral Analysis
+                        </span>
                       </div>
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
                           <FaChartLine className="w-4 h-4 text-primary" />
                         </div>
-                        <span className="text-sm text-muted-foreground">Threat Intelligence Reports</span>
+                        <span className="text-sm text-muted-foreground">
+                          Threat Intelligence Reports
+                        </span>
                       </div>
                     </div>
                   </GlassSection>
@@ -87,12 +106,14 @@ export default function ProductsPage() {
         <Container>
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <GradientHeading size="md" className="mb-4">Coming Soon</GradientHeading>
+              <GradientHeading size="md" className="mb-4">
+                Coming Soon
+              </GradientHeading>
               <p className="text-muted-foreground text-lg">
                 New products and services are on the way!
               </p>
             </div>
-            
+
             {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <GlassSection className="p-6 relative overflow-hidden">
                 <div className="absolute top-4 right-4">
@@ -153,9 +174,12 @@ export default function ProductsPage() {
       <Section>
         <Container>
           <GlassSection className="max-w-4xl mx-auto p-8 md:p-12 text-center">
-            <GradientHeading size="md" className="mb-4">Ready to Secure Your Future?</GradientHeading>
+            <GradientHeading size="md" className="mb-4">
+              Ready to Secure Your Future?
+            </GradientHeading>
             <p className="text-lg text-muted-foreground mb-6">
-              Have a specific concern? We’re ready to build a custom solution immediately.
+              Have a specific concern? We’re ready to build a custom solution
+              immediately.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="group">

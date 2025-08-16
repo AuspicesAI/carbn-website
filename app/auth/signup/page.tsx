@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-import { signInWithRedirect } from 'aws-amplify/auth';
-import { Button } from '@/components/ui/button';
-import '@/lib/amplify-config';
+import { useEffect, useRef, useState } from "react";
+import { signInWithRedirect } from "aws-amplify/auth";
+import { Button } from "@/components/ui/button";
+import "@/lib/amplify-config";
 
 export default function SignUpPage() {
   const [isRedirecting, setIsRedirecting] = useState(false);
@@ -28,14 +28,16 @@ export default function SignUpPage() {
           </h2>
         </div>
         <div className="mt-8 space-y-6 text-center">
-          <p className="text-muted-foreground">You are being redirected to the AuspicesAI sign-up page...</p>
+          <p className="text-muted-foreground">
+            You are being redirected to the AuspicesAI sign-up page...
+          </p>
           <Button
             type="button"
             onClick={() => signInWithRedirect()}
             disabled={isRedirecting}
             size="lg"
           >
-            {isRedirecting ? 'Redirecting…' : 'Go to Sign Up'}
+            {isRedirecting ? "Redirecting…" : "Go to Sign Up"}
           </Button>
         </div>
       </div>

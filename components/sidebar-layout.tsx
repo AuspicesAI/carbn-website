@@ -58,7 +58,7 @@ function NavItem(props: {
       className={cn(
         buttonVariants({ variant: "ghost", size: "sm" }),
         selected && "bg-muted",
-        "flex-grow justify-start text-md text-zinc-800 dark:text-zinc-300 px-2"
+        "flex-grow justify-start text-md text-zinc-800 dark:text-zinc-300 px-2",
       )}
       onClick={props.onClick}
       prefetch={true}
@@ -116,11 +116,17 @@ function SidebarContent(props: {
 
 export type HeaderBreadcrumbItem = { title: string; href: string };
 
-function HeaderBreadcrumb(props: { items: SidebarItem[], baseBreadcrumb?: HeaderBreadcrumbItem[], basePath: string }) {
+function HeaderBreadcrumb(props: {
+  items: SidebarItem[];
+  baseBreadcrumb?: HeaderBreadcrumbItem[];
+  basePath: string;
+}) {
   const segment = useSegment(props.basePath);
-  console.log(segment)
-  const item = props.items.find((item) => item.type === 'item' && item.href === segment);
-  const title: string | undefined = (item as any)?.name
+  console.log(segment);
+  const item = props.items.find(
+    (item) => item.type === "item" && item.href === segment,
+  );
+  const title: string | undefined = (item as any)?.name;
 
   return (
     <Breadcrumb>
@@ -155,12 +161,20 @@ export default function SidebarLayout(props: {
   return (
     <div className="w-full flex">
       <div className="flex-col border-r w-[240px] h-screen sticky top-0 hidden md:flex">
-        <SidebarContent items={props.items} sidebarTop={props.sidebarTop} basePath={props.basePath} />
+        <SidebarContent
+          items={props.items}
+          sidebarTop={props.sidebarTop}
+          basePath={props.basePath}
+        />
       </div>
       <div className="flex flex-col flex-grow w-0">
         <div className="h-14 border-b flex items-center justify-between sticky top-0 bg-white dark:bg-black z-10 px-4 md:px-6">
           <div className="hidden md:flex">
-            <HeaderBreadcrumb baseBreadcrumb={props.baseBreadcrumb} basePath={props.basePath} items={props.items} />
+            <HeaderBreadcrumb
+              baseBreadcrumb={props.baseBreadcrumb}
+              basePath={props.basePath}
+              items={props.items}
+            />
           </div>
 
           <div className="flex md:hidden items-center">
@@ -182,7 +196,11 @@ export default function SidebarLayout(props: {
             </Sheet>
 
             <div className="ml-4 flex md:hidden">
-              <HeaderBreadcrumb baseBreadcrumb={props.baseBreadcrumb} basePath={props.basePath} items={props.items} />
+              <HeaderBreadcrumb
+                baseBreadcrumb={props.baseBreadcrumb}
+                basePath={props.basePath}
+                items={props.items}
+              />
             </div>
           </div>
 

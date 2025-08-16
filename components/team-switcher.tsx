@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useAuth } from '@/lib/auth-context';
-import { Button } from '@/components/ui/button';
+import { useAuth } from "@/lib/auth-context";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,9 +9,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { Check, ChevronsUpDown, Plus } from 'lucide-react';
-import { cn } from '@/lib/utils';
+} from "@/components/ui/dropdown-menu";
+import { Check, ChevronsUpDown, Plus } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface TeamSwitcherProps {
   className?: string;
@@ -28,10 +28,7 @@ export function TeamSwitcher({ className }: TeamSwitcherProps) {
         <Button
           variant="outline"
           role="combobox"
-          className={cn(
-            "w-[200px] justify-between",
-            className
-          )}
+          className={cn("w-[200px] justify-between", className)}
         >
           {selectedTeam.displayName}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -49,9 +46,7 @@ export function TeamSwitcher({ className }: TeamSwitcherProps) {
             className="flex items-center justify-between"
           >
             <span>{team.displayName}</span>
-            {selectedTeam.id === team.id && (
-              <Check className="h-4 w-4" />
-            )}
+            {selectedTeam.id === team.id && <Check className="h-4 w-4" />}
           </DropdownMenuItem>
         ))}
         <DropdownMenuSeparator />

@@ -13,7 +13,10 @@ export function Footer() {
           <div className="col-span-1 md:col-span-2">
             <Logo className="mb-4" />
             <p className="text-sm text-muted-foreground max-w-md">
-            Concerned about AI tools such as code generating models being used to breach your security? We research current and future threats created by AI technologies to build defensive solutions that keep you protected.
+              Concerned about AI tools such as code generating models being used
+              to breach your security? We research current and future threats
+              created by AI technologies to build defensive solutions that keep
+              you protected.
             </p>
           </div>
 
@@ -22,22 +25,34 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors duration-200">
+                <Link
+                  href="/about"
+                  className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="text-muted-foreground hover:text-primary transition-colors duration-200">
+                <Link
+                  href="/products"
+                  className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
                   Products
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors duration-200">
+                <Link
+                  href="/blog"
+                  className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors duration-200">
+                <Link
+                  href="/contact"
+                  className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
                   Contact Us
                 </Link>
               </li>
@@ -72,10 +87,16 @@ export function Footer() {
             © {new Date().getFullYear()} AuspicesAI. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+            <Link
+              href="/privacy"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+            >
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+            <Link
+              href="/terms"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+            >
               Terms of Service
             </Link>
           </div>
@@ -84,4 +105,3 @@ export function Footer() {
     </footer>
   );
 }
-

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useAuth } from '@/lib/auth-context';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { useAuth } from "@/lib/auth-context";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,16 +9,16 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { LogOut, Settings, User } from 'lucide-react';
+} from "@/components/ui/dropdown-menu";
+import { LogOut, Settings, User } from "lucide-react";
 
 export function UserButton() {
   const { user, signOut } = useAuth();
 
   if (!user) return null;
 
-  const userInitials = user.username?.slice(0, 2).toUpperCase() || 'U';
-  const userEmail = user.signInDetails?.loginId || 'User';
+  const userInitials = user.username?.slice(0, 2).toUpperCase() || "U";
+  const userEmail = user.signInDetails?.loginId || "User";
 
   return (
     <DropdownMenu>

@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 import { GradientHeading } from "@/components/ui/gradient-heading";
 import { GlassSection } from "@/components/ui/glass-section";
 import { Section } from "@/components/ui/section";
@@ -10,24 +10,33 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { GlassyIcon } from "@/components/ui/glassy-icon";
-import { FaEnvelope, FaUser, FaPhone, FaMapMarkerAlt, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
-import emailjs from '@emailjs/browser';
+import {
+  FaEnvelope,
+  FaUser,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaPaperPlane,
+  FaCheckCircle,
+} from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -37,33 +46,42 @@ export default function ContactPage() {
 
     try {
       emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
-      
+
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
-        phone: formData.phone || 'Not provided',
+        phone: formData.phone || "Not provided",
         subject: formData.subject,
         message: formData.message,
-        to_name: 'AuspicesAI Team',
-        reply_to: formData.email
+        to_name: "AuspicesAI Team",
+        reply_to: formData.email,
       };
 
       const result = await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        templateParams
+        templateParams,
       );
-      
+
       if (result.status === 200) {
         setIsSubmitted(true);
-        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
       } else {
         throw new Error(`EmailJS returned status: ${result.status}`);
       }
     } catch (error: any) {
-      console.error('Failed to send email:', error);
-      const errorMessage = error?.text || error?.message || 'Unknown error occurred';
-      alert(`Failed to send message: ${errorMessage}. Please try again or contact us directly at contact@auspicesai.com`);
+      console.error("Failed to send email:", error);
+      const errorMessage =
+        error?.text || error?.message || "Unknown error occurred";
+      alert(
+        `Failed to send message: ${errorMessage}. Please try again or contact us directly at contact@auspicesai.com`,
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -76,9 +94,12 @@ export default function ContactPage() {
           <Container>
             <GlassSection className="max-w-2xl mx-auto p-8 md:p-12 text-center">
               {/* <GlassyIcon icon={<FaCheckCircle />} size="xl" className="mx-auto mb-6" /> */}
-              <GradientHeading size="lg" className="mb-4">Message Sent!</GradientHeading>
+              <GradientHeading size="lg" className="mb-4">
+                Message Sent!
+              </GradientHeading>
               <p className="text-xl text-muted-foreground mb-6">
-                Thank you for contacting us. We’ll get back to you within 24 hours.
+                Thank you for contacting us. We’ll get back to you within 24
+                hours.
               </p>
               <Button onClick={() => setIsSubmitted(false)} variant="outline">
                 Send Another Message
@@ -98,7 +119,8 @@ export default function ContactPage() {
           <GlassSection className="max-w-4xl mx-auto p-8 md:p-12 text-center">
             <GradientHeading size="lg">Contact Us</GradientHeading>
             <p className="text-xl text-muted-foreground mt-4">
-              Have a question? Send us a message and we’ll get back to you as soon as possible.
+              Have a question? Send us a message and we’ll get back to you as
+              soon as possible.
             </p>
           </GlassSection>
         </Container>
@@ -110,7 +132,9 @@ export default function ContactPage() {
           <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <GlassSection className="p-8">
-              <GradientHeading size="md" className="mb-6">Send us a Message</GradientHeading>
+              <GradientHeading size="md" className="mb-6">
+                Send us a Message
+              </GradientHeading>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
@@ -140,7 +164,7 @@ export default function ContactPage() {
                     />
                   </div>
                 </div>
-                
+
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone Number</Label>
@@ -183,13 +207,13 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <Button 
-                  type="submit" 
-                  size="lg" 
+                <Button
+                  type="submit"
+                  size="lg"
                   className="w-full group"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? "Sending..." : "Send Message"}
                   <FaPaperPlane className="ml-2 h-4 w-4" />
                 </Button>
               </form>
@@ -198,23 +222,31 @@ export default function ContactPage() {
             {/* Contact Information */}
             <div className="space-y-8">
               <GlassSection className="p-8">
-                <GradientHeading size="md" className="mb-6">Get in Touch</GradientHeading>
+                <GradientHeading size="md" className="mb-6">
+                  Get in Touch
+                </GradientHeading>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <GlassyIcon icon={<FaEnvelope />} size="sm" />
                     <div>
                       <h4 className="font-semibold mb-1">Email</h4>
-                      <p className="text-muted-foreground">contact@auspicesai.com</p>
-                      <p className="text-sm text-muted-foreground">We’ll respond within 24 hours</p>
+                      <p className="text-muted-foreground">
+                        contact@auspicesai.com
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        We’ll respond within 24 hours
+                      </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-4">
                     <GlassyIcon icon={<FaMapMarkerAlt />} size="sm" />
                     <div>
                       <h4 className="font-semibold mb-1">Location</h4>
                       <p className="text-muted-foreground">Amman, Jordan</p>
-                      <p className="text-sm text-muted-foreground">Serving clients globally</p>
+                      <p className="text-sm text-muted-foreground">
+                        Serving clients globally
+                      </p>
                     </div>
                   </div>
 
@@ -223,14 +255,18 @@ export default function ContactPage() {
                     <div>
                       <h4 className="font-semibold mb-1">Business Hours</h4>
                       <p className="text-muted-foreground">Sunday - Thursday</p>
-                      <p className="text-sm text-muted-foreground">9:00 AM - 6:00 PM (GMT+3)</p>
+                      <p className="text-sm text-muted-foreground">
+                        9:00 AM - 6:00 PM (GMT+3)
+                      </p>
                     </div>
                   </div>
                 </div>
               </GlassSection>
 
               <GlassSection className="p-8">
-                <GradientHeading size="sm" className="mb-4">Why Choose AuspicesAI?</GradientHeading>
+                <GradientHeading size="sm" className="mb-4">
+                  Why Choose AuspicesAI?
+                </GradientHeading>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>

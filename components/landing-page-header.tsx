@@ -75,7 +75,7 @@ function MobileItems(props: NavProps) {
               href={item.disabled ? "#" : item.href}
               className={cn(
                 "flex w-full items-center rounded-md p-2 text-sm font-medium hover:text-primary hover:bg-accent/50 transition-colors duration-200",
-                item.disabled && "cursor-not-allowed opacity-60"
+                item.disabled && "cursor-not-allowed opacity-60",
               )}
               target={item.external ? "_blank" : undefined}
               rel={item.external ? "noreferrer" : undefined}
@@ -107,7 +107,7 @@ function DesktopItems(props: NavProps) {
             item.href.startsWith(`/${segment}`)
               ? "text-primary font-semibold"
               : "text-foreground/70",
-            item.disabled && "cursor-not-allowed opacity-80"
+            item.disabled && "cursor-not-allowed opacity-80",
           )}
           target={item.external ? "_blank" : undefined}
           rel={item.external ? "noreferrer" : undefined}
@@ -123,7 +123,7 @@ export function LandingPageHeader(props: NavProps) {
   const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false);
 
   return (
-    <header className="fixed w-full z-50 bg-background/80 px-4 md:px-8 backdrop-blur">
+    <header className="fixed w-full z-50 bg-transparent px-4 md:px-8 backdrop-blur">
       <div className="flex h-18 items-center justify-between py-4">
         <div className="flex items-center gap-4 md:gap-10">
           <Logo className="hidden md:flex" />

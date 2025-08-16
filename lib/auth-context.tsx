@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { getCurrentUser, signOut, AuthUser } from 'aws-amplify/auth';
-import { Hub } from 'aws-amplify/utils';
-import '@/lib/amplify-config';
+import React, { createContext, useContext, useEffect, useState } from "react";
+import { getCurrentUser, signOut, AuthUser } from "aws-amplify/auth";
+import { Hub } from "aws-amplify/utils";
+import "@/lib/amplify-config";
 
 interface Team {
   id: string;
@@ -52,14 +52,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (storedTeams) {
       const parsedTeams = JSON.parse(storedTeams);
       setTeams(parsedTeams);
-      
+
       // Auto-select first team if none selected
       const storedSelectedTeam = localStorage.getItem(`selectedTeam_${userId}`);
       if (storedSelectedTeam) {
         setSelectedTeamState(JSON.parse(storedSelectedTeam));
       } else if (parsedTeams.length > 0) {
         setSelectedTeamState(parsedTeams[0]);
-        localStorage.setItem(`selectedTeam_${userId}`, JSON.stringify(parsedTeams[0]));
+        localStorage.setItem(
+          `selectedTeam_${userId}`,
+          JSON.stringify(parsedTeams[0]),
+        );
       }
     }
   };
@@ -71,7 +74,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setTeams([]);
       setSelectedTeamState(null);
     } catch (error) {
-      console.error('Error signing out:', error);
+      console.error("Error signing out:", error);
     }
   };
 
@@ -90,7 +93,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     // Store in localStorage (in production, use proper API)
     localStorage.setItem(`teams_${user.userId}`, JSON.stringify(updatedTeams));
-    localStorage.setItem(`selectedTeam_${user.userId}`, JSON.stringify(newTeam));
+    localStorage.setItem(
+      `selectedTeam_${user.userId}`,
+      JSON.stringify(newTeam),
+    );
   };
 
   const setSelectedTeam = (team: Team) => {
@@ -103,12 +109,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     refreshUser();
 
     // Listen for auth events
-    const unsubscribe = Hub.listen('auth', ({ payload }) => {
+    const unsubscribe = Hub.listen("auth", ({ payload }) => {
       switch (payload.event) {
-        case 'signedIn':
+        case "signedIn":
           refreshUser();
           break;
-        case 'signedOut':
+        case "signedOut":
           setUser(null);
           setTeams([]);
           setSelectedTeamState(null);
@@ -137,18 +143,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 export function useAuth() {
   const context = useContext(AuthContext);
   if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
 }
 
 // Hook to replace Stack Auth's useUser with redirect functionality
-export function useUser(options?: { or?: 'redirect' }) {
-  const { user, isLoading, teams, selectedTeam, createTeam, setSelectedTeam } = useAuth();
-  
+export function useUser(options?: { or?: "redirect" }) {
+  const { user, isLoading, teams, selectedTeam, createTeam, setSelectedTeam } =
+    useAuth();
+
   useEffect(() => {
-    if (!isLoading && !user && options?.or === 'redirect') {
-      window.location.href = '/auth/signin';
+    if (!isLoading && !user && options?.or === "redirect") {
+      window.location.href = "/auth/signin";
     }
   }, [user, isLoading, options]);
 
