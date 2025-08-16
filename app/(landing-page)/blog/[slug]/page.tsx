@@ -4,12 +4,13 @@ import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { notFound } from "next/navigation";
 
+// Sample blog posts data with markdown content
 const blogPosts = {
   "ai-cybersecurity-future": {
     title: "The Future of AI in Cybersecurity",
-    date: "2025-08-16",
+    date: "2024-01-15",
     author: "Yousef Musabeh",
-    readTime: "2 min read",
+    readTime: "5 min read",
     tags: ["AI", "Cybersecurity", "Future Tech"],
     content: `
 # The Future of AI in Cybersecurity
@@ -53,9 +54,9 @@ At AuspicesAI, we're building these next-generation solutions to keep your organ
   },
   "zero-trust-architecture": {
     title: "Implementing Zero Trust Architecture in Modern Organizations",
-    date: "2025-08-01",
+    date: "2024-01-10",
     author: "Saud Smadi",
-    readTime: "4 min read",
+    readTime: "8 min read",
     tags: ["Zero Trust", "Security", "Architecture"],
     content: `
 # Implementing Zero Trust Architecture in Modern Organizations
@@ -145,9 +146,14 @@ Zero Trust isn't just a security model, it's a business enabler that allows orga
   }
 };
 
-export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const post = blogPosts[slug as keyof typeof blogPosts];
+interface BlogPostPageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export default function BlogPostPage({ params }: BlogPostPageProps) {
+  const post = blogPosts[params.slug as keyof typeof blogPosts];
 
   if (!post) {
     notFound();

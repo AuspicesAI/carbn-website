@@ -114,7 +114,7 @@ export default function AboutPage() {
                   <GlassyIcon icon={<FaUserClock />} size="md" className="mx-auto mb-4" />
                   <h3 className="text-lg font-semibold mb-3">Responsiveness</h3>
                   <p className="text-muted-foreground">
-                    We provide timely support and solutions to address our clients&rsquo; needs and challenges.
+                    We provide timely support and solutions to address our clients' needs and challenges.
                   </p>
                 </div>
               </GlassSection>
