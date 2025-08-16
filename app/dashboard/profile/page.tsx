@@ -7,24 +7,24 @@ import {
 } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-  title: "Dashboard",
-  description: "AuspicesAI Dashboard: Coming Soon",
+  title: "Profile",
+  description: "User profile settings",
 };
 
-export default function DashboardPage() {
+export default function ProfilePage() {
   return (
     <div className="flex-col">
       <div className="flex-1 space-y-4 p-8 pt-6">
         <div className="flex items-center justify-between space-y-2">
-          <h2 className="text-2xl font-bold tracking-tight">Overview</h2>
+          {/* <h2 className="text-2xl">Your Profile</h2> */}
         </div>
         <Card className="max-w-2xl mx-auto">
           <CardHeader className="text-center">
-            <CardTitle className="text-xl">Dashboard Not Ready Yet</CardTitle>
+            <CardTitle className="text-xl">Coming Soon</CardTitle>
           </CardHeader>
           <CardContent className="text-center">
             <p className="text-muted-foreground">
-              We&apos;re working hard to bring you an amazing dashboard experience. 
+              Profile management features are currently under development.
             </p>
           </CardContent>
         </Card>

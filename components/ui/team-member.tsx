@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { FaInstagram, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 interface SocialMediaLinks {
@@ -28,10 +29,12 @@ export const TeamMember: React.FC<TeamMemberProps> = ({
   return (
     <div className={`flex flex-col w-full ${className}`}>
       <div className="flex lg:flex-row sm:flex-col sm:text-center sm:items-center gap-6 mb-5 pb-5 border-b border-border">
-        <img
+        <Image
           src={imageSrc}
           alt={`${name}'s profile`}
-          className="rounded-2xl object-cover w-24 h-auto"
+          width={96}
+          height={96}
+          className="rounded-2xl object-cover w-24 h-24"
         />
         <div>
           <div>
