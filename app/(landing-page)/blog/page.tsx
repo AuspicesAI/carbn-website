@@ -31,7 +31,7 @@ export default function BlogPage() {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <Section spacing="lg">
+      <Section spacing="lg" className="pb-12">
         <Container>
           <GlassSection className="max-w-4xl mx-auto p-8 md:p-12 text-center">
             <GradientHeading size="lg">AuspicesAI Blog</GradientHeading>
@@ -44,7 +44,7 @@ export default function BlogPage() {
       </Section>
 
       {/* Blog Posts Grid */}
-      <Section>
+      <Section className="py-0 pb-24">
         <Container>
           <div className="max-w-4xl mx-auto space-y-8">
             {blogPosts.map((post) => (

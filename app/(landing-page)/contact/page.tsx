@@ -114,7 +114,7 @@ export default function ContactPage() {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <Section spacing="lg">
+      <Section spacing="lg" className="pb-12">
         <Container>
           <GlassSection className="max-w-4xl mx-auto p-8 md:p-12 text-center">
             <GradientHeading size="lg">Contact Us</GradientHeading>
@@ -127,7 +127,7 @@ export default function ContactPage() {
       </Section>
 
       {/* Contact Form & Info */}
-      <Section>
+      <Section className="py-0 pb-24">
         <Container>
           <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}

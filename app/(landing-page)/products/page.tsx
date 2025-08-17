@@ -15,7 +15,7 @@ export default function ProductsPage() {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <Section spacing="lg">
+      <Section spacing="lg" className="pb-12">
         <Container>
           <GlassSection className="max-w-4xl mx-auto p-8 md:p-12 text-center">
             <GradientHeading size="lg">Our Products</GradientHeading>
