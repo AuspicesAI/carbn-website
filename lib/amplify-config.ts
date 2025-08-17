@@ -27,8 +27,11 @@ function generateDomainVariants(url: string): string[] {
 const amplifyConfig = {
   Auth: {
     Cognito: {
-      userPoolId: process.env.NEXT_PUBLIC_COGNITO_USER_POOL_ID!,
-      userPoolClientId: process.env.NEXT_PUBLIC_COGNITO_CLIENT_ID!,
+      userPoolId:
+        process.env.NEXT_PUBLIC_COGNITO_USER_POOL_ID || "us-east-1_1m8exzQ0i",
+      userPoolClientId:
+        process.env.NEXT_PUBLIC_COGNITO_CLIENT_ID ||
+        "3lsnrsn1kq2hm80h6d01tak1ta",
       region: process.env.AWS_REGION || "us-east-1",
       signUpVerificationMethod: "link" as const,
       // Hosted UI / OAuth configuration for production (auspicesai.com)

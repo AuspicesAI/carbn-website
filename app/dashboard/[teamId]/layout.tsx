@@ -3,17 +3,7 @@
 import SidebarLayout, { SidebarItem } from "@/components/sidebar-layout";
 import { useUser } from "@/lib/auth-context";
 import { TeamSwitcher } from "@/components/team-switcher";
-import {
-  BadgePercent,
-  BarChart4,
-  Columns3,
-  Globe,
-  Locate,
-  Settings2,
-  ShoppingBag,
-  ShoppingCart,
-  Users,
-} from "lucide-react";
+import { Globe, Settings2, ShoppingBag, Users } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 
 const navigationItems: SidebarItem[] = [
@@ -37,40 +27,6 @@ const navigationItems: SidebarItem[] = [
     name: "People",
     href: "/people",
     icon: Users,
-    type: "item",
-  },
-  {
-    name: "Segments",
-    href: "/segments",
-    icon: Columns3,
-    type: "item",
-  },
-  {
-    name: "Regions",
-    href: "/regions",
-    icon: Locate,
-    type: "item",
-  },
-  {
-    type: "label",
-    name: "Monetization",
-  },
-  {
-    name: "Revenue",
-    href: "/revenue",
-    icon: BarChart4,
-    type: "item",
-  },
-  {
-    name: "Orders",
-    href: "/orders",
-    icon: ShoppingCart,
-    type: "item",
-  },
-  {
-    name: "Discounts",
-    href: "/discounts",
-    icon: BadgePercent,
     type: "item",
   },
   {

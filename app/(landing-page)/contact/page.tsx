@@ -7,14 +7,16 @@ import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Textarea } from "@/components/ui/text-area";
 import { Label } from "@/components/ui/label";
 import { GlassyIcon } from "@/components/ui/glassy-icon";
 import {
   FaEnvelope,
   FaUser,
+  FaPhone,
   FaMapMarkerAlt,
   FaPaperPlane,
+  FaCheckCircle,
 } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
@@ -96,8 +98,8 @@ export default function ContactPage() {
                 Message Sent!
               </GradientHeading>
               <p className="text-xl text-muted-foreground mb-6">
-                Thank you for contacting us. We’ll get back to you within 24
-                hours.
+                Thank you for contacting us. We&apos;ll get back to you within
+                24 hours.
               </p>
               <Button onClick={() => setIsSubmitted(false)} variant="outline">
                 Send Another Message
@@ -112,20 +114,20 @@ export default function ContactPage() {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <Section spacing="lg" className="pb-12">
+      <Section spacing="lg">
         <Container>
           <GlassSection className="max-w-4xl mx-auto p-8 md:p-12 text-center">
             <GradientHeading size="lg">Contact Us</GradientHeading>
             <p className="text-xl text-muted-foreground mt-4">
-              Have a question? Send us a message and we’ll get back to you as
-              soon as possible.
+              Have a question? Send us a message and we&apos;ll get back to you
+              as soon as possible.
             </p>
           </GlassSection>
         </Container>
       </Section>
 
       {/* Contact Form & Info */}
-      <Section className="py-0 pb-24">
+      <Section>
         <Container>
           <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -172,7 +174,6 @@ export default function ContactPage() {
                       type="tel"
                       value={formData.phone}
                       onChange={handleChange}
-                      maxLength={19}
                       className="bg-background/50 border-border/50 backdrop-blur-sm"
                       placeholder="+1 (555) 123-4567"
                     />
@@ -186,7 +187,6 @@ export default function ContactPage() {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      maxLength={50}
                       className="bg-background/50 border-border/50 backdrop-blur-sm"
                       placeholder="How can we help?"
                     />
@@ -202,7 +202,6 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    maxLength={1500}
                     className="bg-background/50 border-border/50 backdrop-blur-sm resize-none"
                     placeholder="Tell us about your cybersecurity needs or any questions you have..."
                   />
@@ -231,15 +230,11 @@ export default function ContactPage() {
                     <GlassyIcon icon={<FaEnvelope />} size="sm" />
                     <div>
                       <h4 className="font-semibold mb-1">Email</h4>
-                      <a
-                        href="mailto:contact@auspicesai.com"
-                        className="text-muted-foreground underline hover:text-primary transition-colors"
-                        aria-label="Send email to contact@auspicesai.com"
-                      >
+                      <p className="text-muted-foreground">
                         contact@auspicesai.com
-                      </a>
+                      </p>
                       <p className="text-sm text-muted-foreground">
-                        We’ll respond within 24 hours
+                        We&apos;ll respond within 24 hours
                       </p>
                     </div>
                   </div>

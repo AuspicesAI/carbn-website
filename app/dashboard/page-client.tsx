@@ -12,8 +12,10 @@ export function PageClient() {
   const user = useUser({ or: "redirect" });
   const [teamDisplayName, setTeamDisplayName] = React.useState("");
 
-  // Ensure hooks are not called conditionally
-  const teams = React.useMemo(() => (user ? user.useTeams() : []), [user]);
+  // Memoize teams to prevent unnecessary re-renders
+  const teams = React.useMemo(() => {
+    return user ? user.useTeams() : [];
+  }, [user]);
 
   // Auto-select first team when available
   React.useEffect(() => {
