@@ -145,6 +145,7 @@ export default function ContactPage() {
                       type="text"
                       value={formData.name}
                       onChange={handleChange}
+                      maxLength={70}
                       required
                       className="bg-background/50 border-border/50 backdrop-blur-sm"
                       placeholder="Your full name"
@@ -159,6 +160,7 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       required
+                      maxLength={250}
                       className="bg-background/50 border-border/50 backdrop-blur-sm"
                       placeholder="your@email.com"
                     />
@@ -175,6 +177,7 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       className="bg-background/50 border-border/50 backdrop-blur-sm"
+                      maxLength={19}
                       placeholder="+1 (555) 123-4567"
                     />
                   </div>
@@ -186,6 +189,7 @@ export default function ContactPage() {
                       type="text"
                       value={formData.subject}
                       onChange={handleChange}
+                      maxLength={50}
                       required
                       className="bg-background/50 border-border/50 backdrop-blur-sm"
                       placeholder="How can we help?"
@@ -202,6 +206,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     rows={6}
+                    maxLength={1500}
                     className="bg-background/50 border-border/50 backdrop-blur-sm resize-none"
                     placeholder="Tell us about your cybersecurity needs or any questions you have..."
                   />
@@ -230,9 +235,13 @@ export default function ContactPage() {
                     <GlassyIcon icon={<FaEnvelope />} size="sm" />
                     <div>
                       <h4 className="font-semibold mb-1">Email</h4>
-                      <p className="text-muted-foreground">
+                      <a
+                        href="mailto:contact@auspicesai.com"
+                        className="text-muted-foreground underline hover:text-primary transition-colors"
+                        aria-label="Send email to contact@auspicesai.com"
+                      >
                         contact@auspicesai.com
-                      </p>
+                      </a>
                       <p className="text-sm text-muted-foreground">
                         We&apos;ll respond within 24 hours
                       </p>
