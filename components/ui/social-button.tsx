@@ -1,10 +1,11 @@
-import * as React from "react"
-import { cn } from "@/lib/utils"
-import Link from "next/link"
+import * as React from "react";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 
-export interface SocialButtonProps extends React.ComponentPropsWithoutRef<typeof Link> {
-  children: React.ReactNode
-  className?: string
+export interface SocialButtonProps
+  extends React.ComponentPropsWithoutRef<typeof Link> {
+  children: React.ReactNode;
+  className?: string;
 }
 
 const SocialButton = React.forwardRef<
@@ -27,14 +28,14 @@ const SocialButton = React.forwardRef<
         "dark:hover:shadow-[0_12px_40px_rgba(147,51,234,0.3),0_6px_20px_rgba(147,51,234,0.18)]",
         "hover:border-purple-400/70 dark:hover:border-purple-400/45",
         "transition-all duration-300",
-        className
+        className,
       )}
       {...props}
     >
       {children}
     </Link>
-  )
-})
-SocialButton.displayName = "SocialButton"
+  );
+});
+SocialButton.displayName = "SocialButton";
 
-export { SocialButton }
+export { SocialButton };

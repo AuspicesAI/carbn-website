@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useAuth } from '@/lib/auth-context';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { useAuth } from "@/lib/auth-context";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,11 +9,11 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { LogOut, Settings, User } from 'lucide-react';
-import { fetchAuthSession } from 'aws-amplify/auth';
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
+} from "@/components/ui/dropdown-menu";
+import { LogOut, Settings, User } from "lucide-react";
+import { fetchAuthSession } from "aws-amplify/auth";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export function UserButton() {
   const { user, signOut } = useAuth();
@@ -22,7 +22,7 @@ export function UserButton() {
   useEffect(() => {
     if (user) {
       fetchAuthSession()
-        .then(session => {
+        .then((session) => {
           // Extract user info from ID token claims
           const idToken = session.tokens?.idToken;
           if (idToken) {
@@ -36,8 +36,8 @@ export function UserButton() {
             });
           }
         })
-        .catch(error => {
-          console.error('Error fetching auth session:', error);
+        .catch((error) => {
+          console.error("Error fetching auth session:", error);
         });
     }
   }, [user]);
@@ -45,9 +45,13 @@ export function UserButton() {
   if (!user) return null;
 
   // Get user info from ID token claims or fallback to user object
-  const userEmail = userInfo?.email || user.signInDetails?.loginId || 'User';
-  const displayName = userInfo?.given_name || userInfo?.name || userInfo?.nickname || userEmail.split('@')[0];
-  const userInitials = displayName.slice(0, 2).toUpperCase() || 'U';
+  const userEmail = userInfo?.email || user.signInDetails?.loginId || "User";
+  const displayName =
+    userInfo?.given_name ||
+    userInfo?.name ||
+    userInfo?.nickname ||
+    userEmail.split("@")[0];
+  const userInitials = displayName.slice(0, 2).toUpperCase() || "U";
 
   return (
     <DropdownMenu>

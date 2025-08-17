@@ -65,4 +65,3 @@ export function PageClient() {
 
   return null;
 }
-

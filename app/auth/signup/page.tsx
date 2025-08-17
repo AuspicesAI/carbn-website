@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { signInWithRedirect, getCurrentUser } from 'aws-amplify/auth';
-import { Button } from '@/components/ui/button';
-import '@/lib/amplify-config';
+import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import { signInWithRedirect, getCurrentUser } from "aws-amplify/auth";
+import { Button } from "@/components/ui/button";
+import "@/lib/amplify-config";
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -16,20 +16,20 @@ export default function SignUpPage() {
     const checkAuthAndRedirect = async () => {
       if (attemptedRef.current) return;
       attemptedRef.current = true;
-      
+
       try {
         // Check if user is already authenticated
         const user = await getCurrentUser();
         if (user) {
-          console.log('User already authenticated, redirecting to dashboard');
-          router.replace('/dashboard');
+          console.log("User already authenticated, redirecting to dashboard");
+          router.replace("/dashboard");
           return;
         }
       } catch (err) {
         // User not authenticated, proceed with sign-up
-        console.log('User not authenticated, proceeding with sign-up');
+        console.log("User not authenticated, proceeding with sign-up");
       }
-      
+
       setIsChecking(false);
       setIsRedirecting(true);
       // Call without provider to show Hosted UI with all options (includes signup)
@@ -49,7 +49,9 @@ export default function SignUpPage() {
         </div>
         <div className="mt-8 space-y-6 text-center">
           <p className="text-muted-foreground">
-            {isChecking ? 'Checking authentication status...' : 'Redirecting to AuspicesAI sign-up page...'}
+            {isChecking
+              ? "Checking authentication status..."
+              : "Redirecting to AuspicesAI sign-up page..."}
           </p>
           <Button
             type="button"
@@ -57,7 +59,11 @@ export default function SignUpPage() {
             disabled={isChecking || isRedirecting}
             size="lg"
           >
-            {isChecking ? 'Checking...' : isRedirecting ? 'Redirecting…' : 'Go to Sign Up'}
+            {isChecking
+              ? "Checking..."
+              : isRedirecting
+                ? "Redirecting…"
+                : "Go to Sign Up"}
           </Button>
         </div>
       </div>

@@ -9,16 +9,16 @@ interface GlassyIconProps {
 
 const sizeClasses = {
   sm: "w-8 h-8",
-  md: "w-12 h-12", 
+  md: "w-12 h-12",
   lg: "w-16 h-16",
-  xl: "w-20 h-20"
+  xl: "w-20 h-20",
 };
 
 const iconSizeClasses = {
   sm: "w-4 h-4",
   md: "w-6 h-6",
-  lg: "w-8 h-8", 
-  xl: "w-10 h-10"
+  lg: "w-8 h-8",
+  xl: "w-10 h-10",
 };
 
 export function GlassyIcon({ icon, size = "md", className }: GlassyIconProps) {
@@ -41,13 +41,15 @@ export function GlassyIcon({ icon, size = "md", className }: GlassyIconProps) {
         "hover:border-primary/40",
         // Size classes
         sizeClasses[size],
-        className
+        className,
       )}
     >
-      <div className={cn(
-        "flex items-center justify-center text-primary relative z-10",
-        iconSizeClasses[size]
-      )}>
+      <div
+        className={cn(
+          "flex items-center justify-center text-primary relative z-10",
+          iconSizeClasses[size],
+        )}
+      >
         {icon}
       </div>
     </div>

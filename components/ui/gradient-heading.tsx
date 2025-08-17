@@ -34,7 +34,7 @@ export function GradientHeading({
         // Punchy glow to feel glassy/illuminated
         "drop-shadow-[0_2px_12px_rgba(168,85,247,0.35)]",
         center && "text-center",
-        className
+        className,
       )}
     >
       {children}

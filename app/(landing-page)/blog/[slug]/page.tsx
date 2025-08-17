@@ -50,7 +50,7 @@ The future of cybersecurity lies in the seamless integration of AI technologies 
 4. Recover systems with minimal downtime
 
 At AuspicesAI, we're building these next-generation solutions to keep your organization secure in an increasingly digital world.
-    `
+    `,
   },
   "zero-trust-architecture": {
     title: "Implementing Zero Trust Architecture in Modern Organizations",
@@ -142,8 +142,8 @@ We help organizations overcome these challenges through:
 - User-friendly security interfaces
 - Cost-effective cloud-based solutions
 
-Zero Trust isn't just a security model, it's a business enabler that allows organizations to embrace digital transformation while maintaining robust security posture.`
-  }
+Zero Trust isn't just a security model, it's a business enabler that allows organizations to embrace digital transformation while maintaining robust security posture.`,
+  },
 };
 
 interface BlogPostPageProps {
@@ -163,60 +163,105 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   // Simple markdown-to-HTML converter for basic formatting
   const formatContent = (content: string) => {
     return content
-      .split('\n')
+      .split("\n")
       .map((line, index) => {
         // Headers
-        if (line.startsWith('### ')) {
-          return <h3 key={index} className="text-xl font-semibold text-foreground mt-8 mb-4">{line.replace('### ', '')}</h3>;
+        if (line.startsWith("### ")) {
+          return (
+            <h3
+              key={index}
+              className="text-xl font-semibold text-foreground mt-8 mb-4"
+            >
+              {line.replace("### ", "")}
+            </h3>
+          );
         }
-        if (line.startsWith('## ')) {
-          return <h2 key={index} className="text-2xl font-bold text-foreground mt-10 mb-6">{line.replace('## ', '')}</h2>;
+        if (line.startsWith("## ")) {
+          return (
+            <h2
+              key={index}
+              className="text-2xl font-bold text-foreground mt-10 mb-6"
+            >
+              {line.replace("## ", "")}
+            </h2>
+          );
         }
-        if (line.startsWith('# ')) {
-          return <h1 key={index} className="text-3xl font-bold text-foreground mt-12 mb-8">{line.replace('# ', '')}</h1>;
+        if (line.startsWith("# ")) {
+          return (
+            <h1
+              key={index}
+              className="text-3xl font-bold text-foreground mt-12 mb-8"
+            >
+              {line.replace("# ", "")}
+            </h1>
+          );
         }
-        
+
         // Code blocks
-        if (line.startsWith('```')) {
+        if (line.startsWith("```")) {
           return null; // Handle in a more sophisticated way in real implementation
         }
-        
+
         // Lists
-        if (line.startsWith('- **')) {
-          const content = line.replace('- **', '').replace('**', '');
-          const [bold, rest] = content.split('** ');
+        if (line.startsWith("- **")) {
+          const content = line.replace("- **", "").replace("**", "");
+          const [bold, rest] = content.split("** ");
           return (
             <li key={index} className="mb-2">
               <strong className="text-foreground">{bold}</strong> {rest}
             </li>
           );
         }
-        if (line.startsWith('- ')) {
-          return <li key={index} className="mb-2 text-muted-foreground">{line.replace('- ', '')}</li>;
+        if (line.startsWith("- ")) {
+          return (
+            <li key={index} className="mb-2 text-muted-foreground">
+              {line.replace("- ", "")}
+            </li>
+          );
         }
-        
+
         // Numbered lists
         if (/^\d+\./.test(line)) {
-          return <li key={index} className="mb-2 text-muted-foreground">{line.replace(/^\d+\.\s/, '')}</li>;
-        }
-        
-        // Bold text
-        if (line.includes('**')) {
-          const parts = line.split('**');
           return (
-            <p key={index} className="mb-4 text-muted-foreground leading-relaxed">
-              {parts.map((part, i) => 
-                i % 2 === 1 ? <strong key={i} className="text-foreground">{part}</strong> : part
+            <li key={index} className="mb-2 text-muted-foreground">
+              {line.replace(/^\d+\.\s/, "")}
+            </li>
+          );
+        }
+
+        // Bold text
+        if (line.includes("**")) {
+          const parts = line.split("**");
+          return (
+            <p
+              key={index}
+              className="mb-4 text-muted-foreground leading-relaxed"
+            >
+              {parts.map((part, i) =>
+                i % 2 === 1 ? (
+                  <strong key={i} className="text-foreground">
+                    {part}
+                  </strong>
+                ) : (
+                  part
+                ),
               )}
             </p>
           );
         }
-        
+
         // Regular paragraphs
-        if (line.trim() && !line.startsWith('#')) {
-          return <p key={index} className="mb-4 text-muted-foreground leading-relaxed">{line}</p>;
+        if (line.trim() && !line.startsWith("#")) {
+          return (
+            <p
+              key={index}
+              className="mb-4 text-muted-foreground leading-relaxed"
+            >
+              {line}
+            </p>
+          );
         }
-        
+
         return null;
       })
       .filter(Boolean);
@@ -239,11 +284,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   </span>
                 ))}
               </div>
-              
+
               <GradientHeading size="lg" className="mb-6">
                 {post.title}
               </GradientHeading>
-              
+
               <div className="flex items-center gap-4 text-muted-foreground">
                 <span>By {post.author}</span>
                 <span>•</span>

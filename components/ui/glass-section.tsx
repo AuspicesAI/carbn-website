@@ -16,7 +16,7 @@ export function GlassSection({
         "bg-white/10 dark:bg-zinc-900/30 border-white/20 dark:border-white/10 backdrop-blur-xl",
         // Light bevel/shadow for depth
         "ring-1 ring-black/5",
-        className
+        className,
       )}
     >
       {children}

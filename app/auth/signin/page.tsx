@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { signInWithRedirect, getCurrentUser } from 'aws-amplify/auth';
-import { Button } from '@/components/ui/button';
-import '@/lib/amplify-config';
+import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import { signInWithRedirect, getCurrentUser } from "aws-amplify/auth";
+import { Button } from "@/components/ui/button";
+import "@/lib/amplify-config";
 
 export default function SignInPage() {
   const router = useRouter();
@@ -16,20 +16,20 @@ export default function SignInPage() {
     const checkAuthAndRedirect = async () => {
       if (attemptedRef.current) return;
       attemptedRef.current = true;
-      
+
       try {
         // Check if user is already authenticated
         const user = await getCurrentUser();
         if (user) {
-          console.log('User already authenticated, redirecting to dashboard');
-          router.replace('/dashboard');
+          console.log("User already authenticated, redirecting to dashboard");
+          router.replace("/dashboard");
           return;
         }
       } catch (err) {
         // User not authenticated, proceed with sign-in
-        console.log('User not authenticated, proceeding with sign-in');
+        console.log("User not authenticated, proceeding with sign-in");
       }
-      
+
       setIsChecking(false);
       setIsRedirecting(true);
       // Call without provider to show Hosted UI with all options
@@ -49,7 +49,9 @@ export default function SignInPage() {
         </div>
         <div className="mt-8 space-y-6 text-center">
           <p className="text-muted-foreground">
-            {isChecking ? 'Checking authentication status...' : 'Redirecting to AuspicesAI sign-in page...'}
+            {isChecking
+              ? "Checking authentication status..."
+              : "Redirecting to AuspicesAI sign-in page..."}
           </p>
           <Button
             type="button"
@@ -57,7 +59,11 @@ export default function SignInPage() {
             disabled={isChecking || isRedirecting}
             size="lg"
           >
-            {isChecking ? 'Checking...' : isRedirecting ? 'Redirecting…' : 'Go to Sign In'}
+            {isChecking
+              ? "Checking..."
+              : isRedirecting
+                ? "Redirecting…"
+                : "Go to Sign In"}
           </Button>
         </div>
       </div>

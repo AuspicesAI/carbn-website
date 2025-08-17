@@ -1,9 +1,15 @@
-'use client';
+"use client";
 
-import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
-import { getCurrentUser, signOut, AuthUser } from 'aws-amplify/auth';
-import { Hub } from 'aws-amplify/utils';
-import '@/lib/amplify-config';
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  useCallback,
+} from "react";
+import { getCurrentUser, signOut, AuthUser } from "aws-amplify/auth";
+import { Hub } from "aws-amplify/utils";
+import "@/lib/amplify-config";
 
 interface Team {
   id: string;
@@ -40,18 +46,23 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       if (storedTeams) {
         const parsedTeams = JSON.parse(storedTeams);
         setTeams(parsedTeams);
-        
+
         // Auto-select first team if none selected
-        const storedSelectedTeam = localStorage.getItem(`selectedTeam_${userId}`);
+        const storedSelectedTeam = localStorage.getItem(
+          `selectedTeam_${userId}`,
+        );
         if (storedSelectedTeam) {
           setSelectedTeamState(JSON.parse(storedSelectedTeam));
         } else if (parsedTeams.length > 0) {
           setSelectedTeamState(parsedTeams[0]);
-          localStorage.setItem(`selectedTeam_${userId}`, JSON.stringify(parsedTeams[0]));
+          localStorage.setItem(
+            `selectedTeam_${userId}`,
+            JSON.stringify(parsedTeams[0]),
+          );
         }
       }
     } catch (error) {
-      console.error('Error loading user teams:', error);
+      console.error("Error loading user teams:", error);
       setTeams([]);
       setSelectedTeamState(null);
     }
@@ -67,41 +78,50 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       // Don't clear localStorage, keep teams for when user signs back in
       // Only clear selected team for current session
       const keys = Object.keys(localStorage);
-      keys.forEach(key => {
-        if (key.startsWith('selectedTeam_')) {
+      keys.forEach((key) => {
+        if (key.startsWith("selectedTeam_")) {
           localStorage.removeItem(key);
         }
       });
     } catch (error) {
-      console.error('Error signing out:', error);
+      console.error("Error signing out:", error);
       // Force redirect even if signOut fails
-      window.location.href = '/';
+      window.location.href = "/";
     } finally {
       setIsLoading(false);
     }
   }, []);
 
-  const createTeam = useCallback(async ({ displayName }: { displayName: string }) => {
-    if (!user) return;
+  const createTeam = useCallback(
+    async ({ displayName }: { displayName: string }) => {
+      if (!user) return;
 
-    try {
-      const newTeam: Team = {
-        id: `team_${user.userId}`,
-        displayName,
-        createdAt: new Date().toISOString(),
-      };
+      try {
+        const newTeam: Team = {
+          id: `team_${user.userId}`,
+          displayName,
+          createdAt: new Date().toISOString(),
+        };
 
-      const updatedTeams = [...teams, newTeam];
-      setTeams(updatedTeams);
-      setSelectedTeamState(newTeam);
+        const updatedTeams = [...teams, newTeam];
+        setTeams(updatedTeams);
+        setSelectedTeamState(newTeam);
 
-      // Store in localStorage
-      localStorage.setItem(`teams_${user.userId}`, JSON.stringify(updatedTeams));
-      localStorage.setItem(`selectedTeam_${user.userId}`, JSON.stringify(newTeam));
-    } catch (error) {
-      console.error('Error creating team:', error);
-    }
-  }, [user, teams]);
+        // Store in localStorage
+        localStorage.setItem(
+          `teams_${user.userId}`,
+          JSON.stringify(updatedTeams),
+        );
+        localStorage.setItem(
+          `selectedTeam_${user.userId}`,
+          JSON.stringify(newTeam),
+        );
+      } catch (error) {
+        console.error("Error creating team:", error);
+      }
+    },
+    [user, teams],
+  );
 
   const refreshUser = useCallback(async () => {
     try {
@@ -119,33 +139,39 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }, [loadUserTeams]);
 
-  const setSelectedTeam = useCallback(async (team: Team) => {
-    if (!user) return;
-    try {
-      setSelectedTeamState(team);
-      localStorage.setItem(`selectedTeam_${user.userId}`, JSON.stringify(team));
-    } catch (error) {
-      console.error('Error setting selected team:', error);
-    }
-  }, [user]);
+  const setSelectedTeam = useCallback(
+    async (team: Team) => {
+      if (!user) return;
+      try {
+        setSelectedTeamState(team);
+        localStorage.setItem(
+          `selectedTeam_${user.userId}`,
+          JSON.stringify(team),
+        );
+      } catch (error) {
+        console.error("Error setting selected team:", error);
+      }
+    },
+    [user],
+  );
 
   useEffect(() => {
     refreshUser();
 
     // Listen for auth events
-    const unsubscribe = Hub.listen('auth', ({ payload }) => {
+    const unsubscribe = Hub.listen("auth", ({ payload }) => {
       switch (payload.event) {
-        case 'signedIn':
+        case "signedIn":
           refreshUser();
           break;
-        case 'signedOut':
+        case "signedOut":
           setUser(null);
           setTeams([]);
           setSelectedTeamState(null);
           setIsLoading(false);
           setIsInitialized(true);
           // Redirect to root page after logout
-          window.location.href = '/';
+          window.location.href = "/";
           break;
       }
     });
@@ -171,18 +197,26 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 export function useAuth() {
   const context = useContext(AuthContext);
   if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
 }
 
 // Hook to replace Stack Auth's useUser with redirect functionality
-export function useUser(options?: { or?: 'redirect' }) {
-  const { user, isLoading, isInitialized, teams, selectedTeam, createTeam, setSelectedTeam } = useAuth();
-  
+export function useUser(options?: { or?: "redirect" }) {
+  const {
+    user,
+    isLoading,
+    isInitialized,
+    teams,
+    selectedTeam,
+    createTeam,
+    setSelectedTeam,
+  } = useAuth();
+
   useEffect(() => {
-    if (isInitialized && !isLoading && !user && options?.or === 'redirect') {
-      window.location.href = '/';
+    if (isInitialized && !isLoading && !user && options?.or === "redirect") {
+      window.location.href = "/";
     }
   }, [user, isLoading, isInitialized, options]);
 

@@ -3,7 +3,14 @@ import { Button } from "@/components/ui/button";
 import { ProductShowcase } from "@/components/ui/product-showcase";
 import { BrowserMockup } from "@/components/ui/browser-mockup";
 import { CTASection } from "@/components/ui/cta-section";
-import { Shield, Zap, Eye, Target, ArrowRight, ExternalLink } from "lucide-react";
+import {
+  Shield,
+  Zap,
+  Eye,
+  Target,
+  ArrowRight,
+  ExternalLink,
+} from "lucide-react";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -11,12 +18,10 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { FeaturesGrid } from "@/components/ui/features-grid";
 
 export default function IndexPage() {
-
   return (
     <>
       <Hero
         capsuleText="Defensive solutions that keep you protected"
-        capsuleLink="https://auspicesai.com"
         title="Security That Is Not Artificial"
         subtitle="Concerned about AI tools such as code generating models being used to breach your security?"
         primaryCtaText="Try Free Malware Sandbox"
@@ -25,7 +30,8 @@ export default function IndexPage() {
         secondaryCtaLink="/products"
         credits={
           <>
-              Have a specific concern? We&apos;re ready to build a custom solution immediately.
+            Have a specific concern? We&apos;re ready to build a custom solution
+            immediately.
           </>
         }
       />
@@ -79,11 +85,13 @@ export default function IndexPage() {
               features={[
                 {
                   title: "Automated Payload Extraction",
-                  description: "Advanced deobfuscation and unpacking techniques",
+                  description:
+                    "Advanced deobfuscation and unpacking techniques",
                 },
                 {
                   title: "Behavioral Analysis",
-                  description: "Isolated sandbox environment with full monitoring",
+                  description:
+                    "Isolated sandbox environment with full monitoring",
                 },
                 {
                   title: "Threat Intelligence",
@@ -92,15 +100,12 @@ export default function IndexPage() {
               ]}
               primaryAction={
                 <Button size="lg" className="text-lg px-8 py-4" asChild>
-                  <Link href="https://sandbox.auspicesai.com" target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href="https://sandbox.auspicesai.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Try Free Sandbox <ExternalLink className="w-5 h-5 ml-2" />
-                  </Link>
-                </Button>
-              }
-              secondaryAction={
-                <Button variant="outline" size="lg" className="text-lg px-8 py-4" asChild>
-                  <Link href="/products">
-                    Learn More <ArrowRight className="w-5 h-5 ml-2" />
                   </Link>
                 </Button>
               }
@@ -120,16 +125,24 @@ export default function IndexPage() {
               description="Don't take our word for it, try it out for yourself."
               primaryAction={
                 <Button size="lg" className="text-lg px-10 py-5" asChild>
-                  <Link href="https://sandbox.auspicesai.com" target="_blank" rel="noopener noreferrer">
-                    Start Free Analysis <ExternalLink className="w-5 h-5 ml-2" />
+                  <Link
+                    href="https://sandbox.auspicesai.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Start Free Analysis{" "}
+                    <ExternalLink className="w-5 h-5 ml-2" />
                   </Link>
                 </Button>
               }
               secondaryAction={
-                <Button variant="outline" size="lg" className="text-lg px-10 py-5" asChild>
-                  <Link href="/contact">
-                    Get Custom Solution <ArrowRight className="w-5 h-5 ml-2" />
-                  </Link>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-lg px-10 py-5 dark:shadow-none hover:dark:shadow-none"
+                  asChild
+                >
+                  <Link href="/contact">Contact Us</Link>
                 </Button>
               }
               stats={[
@@ -156,4 +169,3 @@ export default function IndexPage() {
     </>
   );
 }
-

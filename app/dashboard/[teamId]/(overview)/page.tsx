@@ -1,10 +1,5 @@
 import { Metadata } from "next";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -24,7 +19,8 @@ export default function DashboardPage() {
           </CardHeader>
           <CardContent className="text-center">
             <p className="text-muted-foreground">
-              We&apos;re working hard to bring you an amazing dashboard experience. 
+              We&apos;re working hard to bring you an amazing dashboard
+              experience.
             </p>
           </CardContent>
         </Card>

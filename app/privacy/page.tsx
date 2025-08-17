@@ -9,8 +9,12 @@ export default function PrivacyPage() {
       <Container>
         <div className="max-w-3xl mx-auto">
           <GlassSection className="p-8 md:p-12 space-y-8">
-            <GradientHeading size="lg" as="h1">Privacy Policy</GradientHeading>
-            <p className="text-sm text-muted-foreground">Last updated: {new Date().toLocaleDateString()}</p>
+            <GradientHeading size="lg" as="h1">
+              Privacy Policy
+            </GradientHeading>
+            <p className="text-sm text-muted-foreground">
+              Last updated: {new Date().toLocaleDateString()}
+            </p>
 
             <div className="grid gap-6">
               <section>
@@ -34,7 +38,8 @@ export default function PrivacyPage() {
               <section>
                 <h2 className="text-lg font-semibold">Security</h2>
                 <p className="mt-3 text-sm text-muted-foreground">
-                  Data is protected with industry-standard controls and AWS-managed services. Access is restricted and audited.
+                  Data is protected with industry-standard controls and
+                  AWS-managed services. Access is restricted and audited.
                 </p>
               </section>
 
@@ -49,7 +54,9 @@ export default function PrivacyPage() {
 
               <section>
                 <h2 className="text-lg font-semibold">Contact</h2>
-                <p className="mt-3 text-sm text-muted-foreground">support@auspicesai.com</p>
+                <p className="mt-3 text-sm text-muted-foreground">
+                  support@auspicesai.com
+                </p>
               </section>
             </div>
           </GlassSection>

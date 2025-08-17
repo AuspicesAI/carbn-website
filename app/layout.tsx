@@ -10,7 +10,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "AuspicesAI: Security That Is Not Artificial",
-  description: "Defensive AI solutions that keep you protected. Custom security solutions built immediately.",
+  description:
+    "Defensive AI solutions that keep you protected. Custom security solutions built immediately.",
 };
 
 export default function RootLayout({
@@ -23,9 +24,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <GlassBackground>
           <Provider>
-            <AuthProvider>
-              {children}
-            </AuthProvider>
+            <AuthProvider>{children}</AuthProvider>
           </Provider>
         </GlassBackground>
       </body>
