@@ -2,6 +2,8 @@ import { GradientHeading } from "@/components/ui/gradient-heading";
 import { GlassSection } from "@/components/ui/glass-section";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
+import { PageHero } from "@/components/ui/page-hero";
+import { StatusBadge } from "@/components/ui/status-badge";
 import Link from "next/link";
 
 const blogPosts = [
@@ -30,18 +32,10 @@ const blogPosts = [
 export default function BlogPage() {
   return (
     <div className="space-y-16">
-      {/* Hero Section */}
-      <Section spacing="lg" className="pb-12">
-        <Container>
-          <GlassSection className="max-w-4xl mx-auto p-8 md:p-12 text-center">
-            <GradientHeading size="lg">AuspicesAI Blog</GradientHeading>
-            <p className="text-xl text-muted-foreground mt-4">
-              Stay updated with the latest insights, trends, and innovations in
-              AI and security.
-            </p>
-          </GlassSection>
-        </Container>
-      </Section>
+      <PageHero
+        title="AuspicesAI Blog"
+        description="Stay updated with the latest insights, trends, and innovations in AI and security."
+      />
 
       {/* Blog Posts Grid */}
       <Section className="py-0 pb-24">
@@ -55,12 +49,7 @@ export default function BlogPage() {
                 <article>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {post.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full"
-                      >
-                        {tag}
-                      </span>
+                      <StatusBadge key={tag}>{tag}</StatusBadge>
                     ))}
                   </div>
 

@@ -20,7 +20,7 @@ export function Logo(props: { className?: string; link?: string }) {
         href={props.link ?? "/"}
         className={cn("flex items-center space-x-2", props.className)}
       >
-        <div className="h-[32px] w-[32px] bg-gray-200 animate-pulse rounded" />
+        <div className="h-auto w-[48px] bg-gray-200 animate-pulse rounded" />
       </Link>
     );
   }
@@ -39,7 +39,7 @@ export function Logo(props: { className?: string; link?: string }) {
         alt="AuspicesAI"
         width={120}
         height={32}
-        className="h-[32px] w-[32px]"
+        className="h-auto w-[48px]"
         priority
       />
     </Link>

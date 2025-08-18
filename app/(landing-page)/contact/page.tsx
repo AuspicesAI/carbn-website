@@ -5,6 +5,9 @@ import { GradientHeading } from "@/components/ui/gradient-heading";
 import { GlassSection } from "@/components/ui/glass-section";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
+import { PageHero } from "@/components/ui/page-hero";
+import { ContactInfoItem } from "@/components/ui/contact-info-item";
+import { FeatureListItem } from "@/components/ui/feature-list-item";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/text-area";
@@ -113,18 +116,10 @@ export default function ContactPage() {
 
   return (
     <div className="space-y-16">
-      {/* Hero Section */}
-      <Section spacing="lg" className="pb-12">
-        <Container>
-          <GlassSection className="max-w-4xl mx-auto p-8 md:p-12 text-center">
-            <GradientHeading size="lg">Contact Us</GradientHeading>
-            <p className="text-xl text-muted-foreground mt-4">
-              Have a question? Send us a message and we&apos;ll get back to you
-              as soon as possible.
-            </p>
-          </GlassSection>
-        </Container>
-      </Section>
+      <PageHero
+        title="Contact Us"
+        description="Have a question? Send us a message and we'll get back to you as soon as possible."
+      />
 
       {/* Contact Form & Info */}
       <Section className="py-0 pb-24">
@@ -231,44 +226,34 @@ export default function ContactPage() {
                   Get in Touch
                 </GradientHeading>
                 <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <GlassyIcon icon={<FaEnvelope />} size="sm" />
-                    <div>
-                      <h4 className="font-semibold mb-1">Email</h4>
+                  <ContactInfoItem
+                    icon={<FaEnvelope />}
+                    title="Email"
+                    content={
                       <a
                         href="mailto:contact@auspicesai.com"
-                        className="text-muted-foreground underline hover:text-primary transition-colors"
+                        className="underline hover:text-primary transition-colors"
                         aria-label="Send email to contact@auspicesai.com"
                       >
                         contact@auspicesai.com
                       </a>
-                      <p className="text-sm text-muted-foreground">
-                        We&apos;ll respond within 24 hours
-                      </p>
-                    </div>
-                  </div>
+                    }
+                    subtitle="We'll respond within 24 hours"
+                  />
 
-                  <div className="flex items-start gap-4">
-                    <GlassyIcon icon={<FaMapMarkerAlt />} size="sm" />
-                    <div>
-                      <h4 className="font-semibold mb-1">Location</h4>
-                      <p className="text-muted-foreground">Amman, Jordan</p>
-                      <p className="text-sm text-muted-foreground">
-                        Serving clients globally
-                      </p>
-                    </div>
-                  </div>
+                  <ContactInfoItem
+                    icon={<FaMapMarkerAlt />}
+                    title="Location"
+                    content="Amman, Jordan"
+                    subtitle="Serving clients globally"
+                  />
 
-                  <div className="flex items-start gap-4">
-                    <GlassyIcon icon={<FaUser />} size="sm" />
-                    <div>
-                      <h4 className="font-semibold mb-1">Business Hours</h4>
-                      <p className="text-muted-foreground">Sunday - Thursday</p>
-                      <p className="text-sm text-muted-foreground">
-                        9:00 AM - 6:00 PM (GMT+3)
-                      </p>
-                    </div>
-                  </div>
+                  <ContactInfoItem
+                    icon={<FaUser />}
+                    title="Business Hours"
+                    content="Sunday - Thursday"
+                    subtitle="9:00 AM - 6:00 PM (GMT+3)"
+                  />
                 </div>
               </GlassSection>
 
@@ -277,22 +262,16 @@ export default function ContactPage() {
                   Why Choose AuspicesAI?
                 </GradientHeading>
                 <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                  <FeatureListItem>
                     AI powered cybersecurity solutions
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                    24/7 expert support
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                  </FeatureListItem>
+                  <FeatureListItem>24/7 expert support</FeatureListItem>
+                  <FeatureListItem>
                     Custom solutions for your needs
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                  </FeatureListItem>
+                  <FeatureListItem>
                     Proven track record in cybersecurity
-                  </li>
+                  </FeatureListItem>
                 </ul>
               </GlassSection>
             </div>

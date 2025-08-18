@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 import { Badge } from "./badge";
+import { GlassyIcon } from "./glassy-icon";
 
 interface CTASectionProps {
   badge: string;
@@ -9,7 +10,7 @@ interface CTASectionProps {
   primaryAction: ReactNode;
   secondaryAction: ReactNode;
   stats: Array<{
-    value: string;
+    icon: ReactNode;
     label: string;
     sublabel: string;
   }>;
@@ -66,8 +67,8 @@ export function CTASection({
               key={index}
               className="p-6 rounded-2xl bg-gradient-to-br from-purple-50/12 via-white/12 to-purple-50/12 dark:bg-gradient-to-br dark:from-purple-900/8 dark:via-white/5 dark:to-purple-900/8 backdrop-blur-sm border border-purple-300/40 dark:border-purple-400/25"
             >
-              <div className="text-3xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent mb-2">
-                {stat.value}
+              <div className="mb-4">
+                <GlassyIcon icon={stat.icon} size="md" className="mx-auto" />
               </div>
               <div className="font-semibold text-foreground/90 mb-1">
                 {stat.label}
