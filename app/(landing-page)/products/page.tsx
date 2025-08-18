@@ -2,30 +2,29 @@ import { GradientHeading } from "@/components/ui/gradient-heading";
 import { GlassSection } from "@/components/ui/glass-section";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
+import { PageHero } from "@/components/ui/page-hero";
+import { FeatureItem } from "@/components/ui/feature-item";
 import { Button } from "@/components/ui/button";
 import {
   FaShieldAlt,
   FaRobot,
   FaChartLine,
   FaArrowRight,
+  FaClock,
+  FaCloud,
+  FaLock,
+  FaRocket,
+  FaStar,
 } from "react-icons/fa";
 import Link from "next/link";
 
 export default function ProductsPage() {
   return (
-    <div className="space-y-16">
-      {/* Hero Section */}
-      <Section spacing="lg" className="pb-12">
-        <Container>
-          <GlassSection className="max-w-4xl mx-auto p-8 md:p-12 text-center">
-            <GradientHeading size="lg">Our Products</GradientHeading>
-            <p className="text-xl text-muted-foreground mt-4">
-              Our products are designed to help you protect your digital assets
-              and infrastructure.
-            </p>
-          </GlassSection>
-        </Container>
-      </Section>
+    <div className="space-y-12">
+      <PageHero
+        title="Our Products"
+        description="Our products are designed to help you protect your digital assets and infrastructure."
+      />
 
       {/* Featured Product */}
       <Section>
@@ -73,30 +72,15 @@ export default function ProductsPage() {
                 <div className="relative">
                   <GlassSection className="p-6 bg-gradient-to-br from-primary/5 to-primary/10">
                     <div className="space-y-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                          <FaShieldAlt className="w-4 h-4 text-primary" />
-                        </div>
-                        <span className="text-sm text-muted-foreground">
-                          Automated Payload Extraction
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                          <FaRobot className="w-4 h-4 text-primary" />
-                        </div>
-                        <span className="text-sm text-muted-foreground">
-                          Behavioral Analysis
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                          <FaChartLine className="w-4 h-4 text-primary" />
-                        </div>
-                        <span className="text-sm text-muted-foreground">
-                          Threat Intelligence Reports
-                        </span>
-                      </div>
+                      <FeatureItem icon={<FaShieldAlt />}>
+                        Automated Payload Extraction
+                      </FeatureItem>
+                      <FeatureItem icon={<FaRobot />}>
+                        Behavioral Analysis
+                      </FeatureItem>
+                      <FeatureItem icon={<FaChartLine />}>
+                        Threat Intelligence Reports
+                      </FeatureItem>
                     </div>
                   </GlassSection>
                 </div>
@@ -106,71 +90,84 @@ export default function ProductsPage() {
         </Container>
       </Section>
 
-      {/* Coming Soon Products */}
-      <Section>
+      {/* Research & Innovation */}
+      <Section spacing="sm">
         <Container>
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <GradientHeading size="md" className="mb-4">
-                Coming Soon
-              </GradientHeading>
-              <p className="text-muted-foreground text-lg">
-                New products and services are on the way!
-              </p>
-            </div>
+            <GlassSection className="p-8 md:p-12 relative overflow-hidden">
+              {/* Animated background elements */}
+              <div className="absolute inset-0 opacity-30">
+                <div className="absolute top-10 left-10 w-20 h-20 bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-full blur-xl animate-pulse" />
+                <div
+                  className="absolute bottom-10 right-10 w-32 h-32 bg-gradient-to-br from-purple-500/15 to-primary/15 rounded-full blur-2xl animate-pulse"
+                  style={{ animationDelay: "1s" }}
+                />
+                <div
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gradient-to-br from-primary/10 to-purple-600/10 rounded-full blur-3xl animate-pulse"
+                  style={{ animationDelay: "2s" }}
+                />
+              </div>
 
-            {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <GlassSection className="p-6 relative overflow-hidden">
-                <div className="absolute top-4 right-4">
-                  <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-orange-500/10 text-orange-500 text-xs font-medium">
-                    <FaClock className="w-3 h-3" />
-                    Soon
+              <div className="relative z-10 text-center">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-primary/20 to-purple-600/20 backdrop-blur-sm border border-primary/30 mb-6">
+                  <FaRocket className="w-4 h-4 text-primary mr-2 animate-bounce" />
+                  <span className="text-primary font-semibold text-sm">
+                    Innovation in Progress
+                  </span>
+                </div>
+
+                <GradientHeading size="lg" className="mb-6">
+                  Advancing Cybersecurity Research
+                </GradientHeading>
+
+                <p className="text-muted-foreground text-xl leading-relaxed mb-8 max-w-3xl mx-auto">
+                  Our team is dedicated to pushing the boundaries of AI-powered
+                  cybersecurity research. We're exploring new technologies to
+                  stay ahead of threats.
+                </p>
+
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="flex flex-col items-center p-6 rounded-xl bg-gradient-to-br from-primary/5 to-purple-600/5 backdrop-blur-sm border border-primary/10">
+                    <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/20 to-purple-600/20 flex items-center justify-center mb-4">
+                      <FaRobot className="w-8 h-8 text-primary" />
+                    </div>
+                    <h4 className="font-semibold text-foreground mb-3 text-lg">
+                      AI Research
+                    </h4>
+                    <p className="text-muted-foreground text-center leading-relaxed">
+                      Developing machine learning models for threat detection
+                      and behavioral analysis
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col items-center p-6 rounded-xl bg-gradient-to-br from-primary/5 to-purple-600/5 backdrop-blur-sm border border-primary/10">
+                    <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/20 to-purple-600/20 flex items-center justify-center mb-4">
+                      <FaShieldAlt className="w-8 h-8 text-primary" />
+                    </div>
+                    <h4 className="font-semibold text-foreground mb-3 text-lg">
+                      Threat Intelligence
+                    </h4>
+                    <p className="text-muted-foreground text-center leading-relaxed">
+                      Analyzing emerging cyber threats and developing defense
+                      mechanisms
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col items-center p-6 rounded-xl bg-gradient-to-br from-primary/5 to-purple-600/5 backdrop-blur-sm border border-primary/10">
+                    <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/20 to-purple-600/20 flex items-center justify-center mb-4">
+                      <FaChartLine className="w-8 h-8 text-primary" />
+                    </div>
+                    <h4 className="font-semibold text-foreground mb-3 text-lg">
+                      Innovation Lab
+                    </h4>
+                    <p className="text-muted-foreground text-center leading-relaxed">
+                      Experimenting with next-generation security technologies
+                      and methodologies
+                    </p>
                   </div>
                 </div>
-                <IconCard
-                  icon={<FaRobot />}
-                  title="AI Incident Response"
-                  description="Intelligent automation that responds to security incidents instantly, minimizing damage and reducing response time from hours to seconds."
-                />
-                <Button variant="outline" className="w-full mt-4" disabled>
-                  Notify Me
-                </Button>
-              </GlassSection>
-              
-              <GlassSection className="p-6 relative overflow-hidden">
-                <div className="absolute top-4 right-4">
-                  <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-orange-500/10 text-orange-500 text-xs font-medium">
-                    <FaClock className="w-3 h-3" />
-                    Soon
-                  </div>
-                </div>
-                <IconCard
-                  icon={<FaCloud />}
-                  title="Cloud Security Suite"
-                  description="Comprehensive cloud protection with AI driven monitoring, compliance management, and secure infrastructure deployment."
-                />
-                <Button variant="outline" className="w-full mt-4" disabled>
-                  Notify Me
-                </Button>
-              </GlassSection>
-              
-              <GlassSection className="p-6 relative overflow-hidden">
-                <div className="absolute top-4 right-4">
-                  <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-orange-500/10 text-orange-500 text-xs font-medium">
-                    <FaClock className="w-3 h-3" />
-                    Soon
-                  </div>
-                </div>
-                <IconCard
-                  icon={<FaLock />}
-                  title="Zero Trust Platform"
-                  description="Implementation of zero trust security models with AI enhanced verification and continuous monitoring capabilities."
-                />
-                <Button variant="outline" className="w-full mt-4" disabled>
-                  Notify Me
-                </Button>
-              </GlassSection>
-            </div> */}
+              </div>
+            </GlassSection>
           </div>
         </Container>
       </Section>

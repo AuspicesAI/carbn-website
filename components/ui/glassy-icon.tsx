@@ -25,20 +25,12 @@ export function GlassyIcon({ icon, size = "md", className }: GlassyIconProps) {
   return (
     <div
       className={cn(
-        // Base styles - perfect centering
-        "rounded-2xl flex items-center justify-center relative",
-        // Glass morphism effect - compatible with both modes
-        "backdrop-blur-md bg-gradient-to-br from-background/80 to-background/40",
-        "border border-border/50 dark:border-border/30",
-        // Enhanced shadows for both modes
-        "shadow-lg shadow-black/10 dark:shadow-black/30",
-        // Subtle inner glow - fixed for light mode
-        "before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-primary/10 before:to-transparent before:opacity-30 dark:before:from-white/10",
-        // Hover effects - removed scale
-        "transition-all duration-300",
-        "hover:bg-gradient-to-br hover:from-background/90 hover:to-background/60",
-        "hover:shadow-xl hover:shadow-primary/15 dark:hover:shadow-primary/10",
-        "hover:border-primary/40",
+        // Base styles - matching FeatureCard design
+        "rounded-2xl flex items-center justify-center",
+        "bg-gradient-to-br from-primary/20 to-purple-600/20",
+        "backdrop-blur-sm border border-primary/20",
+        // Hover effects - matching FeatureCard
+        "group-hover:scale-105 transition-transform duration-300",
         // Size classes
         sizeClasses[size],
         className,
@@ -46,7 +38,7 @@ export function GlassyIcon({ icon, size = "md", className }: GlassyIconProps) {
     >
       <div
         className={cn(
-          "flex items-center justify-center text-primary relative z-10",
+          "flex items-center justify-center text-primary",
           iconSizeClasses[size],
         )}
       >

@@ -4,12 +4,14 @@ import { ProductShowcase } from "@/components/ui/product-showcase";
 import { BrowserMockup } from "@/components/ui/browser-mockup";
 import { CTASection } from "@/components/ui/cta-section";
 import {
-  Shield,
-  Zap,
   Eye,
-  Target,
-  ArrowRight,
   ExternalLink,
+  Shield,
+  Target,
+  Zap,
+  Sparkles,
+  Settings,
+  Bot,
 } from "lucide-react";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
@@ -147,17 +149,17 @@ export default function IndexPage() {
               }
               stats={[
                 {
-                  value: "✨",
+                  icon: <Sparkles className="w-6 h-6 text-primary" />,
                   label: "Free to Use",
                   sublabel: "No hidden costs or limitations",
                 },
                 {
-                  value: "⚙️",
+                  icon: <Settings className="w-6 h-6 text-primary" />,
                   label: "Automated Analysis",
                   sublabel: "Upload files and leave it to us",
                 },
                 {
-                  value: "🤖",
+                  icon: <Bot className="w-6 h-6 text-primary" />,
                   label: "AI Powered",
                   sublabel: "Ask questions and get answers",
                 },

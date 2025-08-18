@@ -1,6 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { FaInstagram, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+import { SocialButton } from "@/components/ui/social-button";
+import { LinkedInLogoIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
+import { GlassSection } from "@/components/ui/glass-section";
 
 interface SocialMediaLinks {
   instagram?: string;
@@ -27,8 +30,8 @@ export const TeamMember: React.FC<TeamMemberProps> = ({
   className = "",
 }) => {
   return (
-    <div className={`flex flex-col w-full ${className}`}>
-      <div className="flex lg:flex-row sm:flex-col sm:text-center sm:items-center gap-6 mb-5 pb-5 border-b border-border">
+    <GlassSection className={`p-6 ${className}`}>
+      <div className="flex lg:flex-row sm:flex-col sm:text-center sm:items-center gap-6 mb-5">
         <Image
           src={imageSrc}
           alt={`${name}'s profile`}
@@ -38,56 +41,56 @@ export const TeamMember: React.FC<TeamMemberProps> = ({
         />
         <div>
           <div>
-            <h6 className="text-lg text-foreground font-semibold">{name}</h6>
-            <span className="text-sm text-primary">{title}</span>
+            <h6 className="text-lg text-foreground font-semibold text-left">
+              {name}
+            </h6>
+            <span className="text-sm text-primary text-left block">
+              {title}
+            </span>
           </div>
-          <div className="flex items-center gap-2 justify-center lg:justify-start pt-2">
+          <div className="flex items-center gap-2 justify-start pt-2">
             {socialLinks?.instagram && (
-              <a
+              <SocialButton
                 href={socialLinks.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer text-muted-foreground hover:text-primary-foreground group w-8 h-8 shadow-sm border rounded-full flex justify-center items-center bg-background transition-all duration-500 hover:bg-primary"
               >
-                <FaInstagram />
-              </a>
+                <FaInstagram className="h-4 w-4" />
+              </SocialButton>
             )}
             {socialLinks?.twitter && (
-              <a
+              <SocialButton
                 href={socialLinks.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer text-muted-foreground hover:text-primary-foreground group w-8 h-8 shadow-sm border rounded-full flex justify-center items-center bg-background transition-all duration-500 hover:bg-primary"
               >
-                <FaTwitter />
-              </a>
+                <FaTwitter className="h-4 w-4" />
+              </SocialButton>
             )}
             {socialLinks?.linkedin && (
-              <a
+              <SocialButton
                 href={socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer text-muted-foreground hover:text-primary-foreground group w-8 h-8 shadow-sm border rounded-full flex justify-center items-center bg-background transition-all duration-500 hover:bg-primary"
               >
-                <FaLinkedin />
-              </a>
+                <LinkedInLogoIcon className="h-4 w-4" />
+              </SocialButton>
             )}
             {socialLinks?.github && (
-              <a
+              <SocialButton
                 href={socialLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer text-muted-foreground hover:text-primary-foreground group w-8 h-8 shadow-sm border rounded-full flex justify-center items-center bg-background transition-all duration-500 hover:bg-primary"
               >
-                <FaGithub />
-              </a>
+                <GitHubLogoIcon className="h-4 w-4" />
+              </SocialButton>
             )}
           </div>
         </div>
       </div>
-      <div className="text-center lg:text-left flex-1">
-        <p className="text-muted-foreground leading-6 mb-7">{bio}</p>
+      <div className="text-left flex-1">
+        <p className="text-muted-foreground leading-6">{bio}</p>
       </div>
-    </div>
+    </GlassSection>
   );
 };
