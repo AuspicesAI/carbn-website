@@ -122,8 +122,8 @@ export default function ProductsPage() {
 
                 <p className="text-muted-foreground text-xl leading-relaxed mb-8 max-w-3xl mx-auto">
                   Our team is dedicated to pushing the boundaries of AI-powered
-                  cybersecurity research. We're exploring new technologies to
-                  stay ahead of threats.
+                  cybersecurity research. We&apos;re exploring new technologies
+                  to stay ahead of threats.
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-6">
