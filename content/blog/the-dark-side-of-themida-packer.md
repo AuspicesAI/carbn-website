@@ -4,7 +4,7 @@ date: "2025-08-19"
 author: "Saud Smadi"
 excerpt: "How Themida Packers are used for malicious purposes."
 tags: ["Security", "Malware", "Packers", "Themida", "Reverse Engineering"]
-readTime: "3 min read"
+readTime: "5 min read"
 ---
 
 # The Dark Side of Themida Packer

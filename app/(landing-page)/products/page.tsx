@@ -115,7 +115,7 @@ export default function ProductsPage() {
                 </div>
 
                 <GradientHeading size="lg" className="mb-6">
-                  We are doing it the right way
+                  We Are Doing It The Right Way
                 </GradientHeading>
 
                 <p className="text-muted-foreground text-xl leading-relaxed mb-8 max-w-3xl mx-auto">

@@ -83,7 +83,7 @@ export default function IndexPage() {
             <ProductShowcase
               badge="Featured Product"
               title="Automated Malware Analysis"
-              description="Upload suspicious files and get comprehensive analysis reports in minutes. Our AI powered sandbox environment safely executes and analyzes malware to extract IOCs, behaviors, and threat intelligence."
+              description="Upload suspicious files and get detailed analysis reports in minutes. Our sandbox environment safely executes and analyzes malware to extract IOCs, behaviors, and threat intelligence. If you're not a tech expert, you can just ask the AI Assitant to tell you the story of what's inside the file."
               features={[
                 {
                   title: "Automated Payload Extraction",
