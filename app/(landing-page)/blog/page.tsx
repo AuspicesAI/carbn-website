@@ -1,35 +1,15 @@
-import { GradientHeading } from "@/components/ui/gradient-heading";
 import { GlassSection } from "@/components/ui/glass-section";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { PageHero } from "@/components/ui/page-hero";
 import { StatusBadge } from "@/components/ui/status-badge";
+import { getAllPosts } from "@/lib/blog";
 import Link from "next/link";
 
-const blogPosts = [
-  {
-    id: "ai-cybersecurity-future",
-    title: "The Future of AI in Cybersecurity",
-    excerpt:
-      "Exploring how artificial intelligence is revolutionizing the cybersecurity landscape and what it means for businesses.",
-    date: "2024-01-15",
-    author: "Yousef Musabeh",
-    readTime: "5 min read",
-    tags: ["AI", "Cybersecurity", "Future Tech"],
-  },
-  {
-    id: "zero-trust-architecture",
-    title: "Implementing Zero Trust Architecture in Modern Organizations",
-    excerpt:
-      "A comprehensive guide to understanding and implementing zero trust security models in today's digital landscape.",
-    date: "2024-01-10",
-    author: "Saud Smadi",
-    readTime: "8 min read",
-    tags: ["Zero Trust", "Security", "Architecture"],
-  },
-];
-
+// To create a new blog post run: node scripts/new-blog-post.js
 export default function BlogPage() {
+  const blogPosts = getAllPosts();
+
   return (
     <div className="space-y-16">
       <PageHero
@@ -43,7 +23,7 @@ export default function BlogPage() {
           <div className="max-w-4xl mx-auto space-y-8">
             {blogPosts.map((post) => (
               <GlassSection
-                key={post.id}
+                key={post.slug}
                 className="p-8 hover:shadow-lg transition-shadow"
               >
                 <article>
@@ -53,7 +33,7 @@ export default function BlogPage() {
                     ))}
                   </div>
 
-                  <Link href={`/blog/${post.id}`} className="group">
+                  <Link href={`/blog/${post.slug}`} className="group">
                     <h2 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                       {post.title}
                     </h2>

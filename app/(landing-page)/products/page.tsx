@@ -6,15 +6,13 @@ import { PageHero } from "@/components/ui/page-hero";
 import { FeatureItem } from "@/components/ui/feature-item";
 import { Button } from "@/components/ui/button";
 import {
-  FaShieldAlt,
-  FaRobot,
-  FaChartLine,
   FaArrowRight,
-  FaClock,
-  FaCloud,
-  FaLock,
   FaRocket,
-  FaStar,
+  FaLaptop,
+  FaCloud,
+  FaExternalLinkAlt,
+  FaMask,
+  FaBrain,
 } from "react-icons/fa";
 import Link from "next/link";
 
@@ -72,13 +70,13 @@ export default function ProductsPage() {
                 <div className="relative">
                   <GlassSection className="p-6 bg-gradient-to-br from-primary/5 to-primary/10">
                     <div className="space-y-4">
-                      <FeatureItem icon={<FaShieldAlt />}>
+                      <FeatureItem icon={<FaExternalLinkAlt />}>
                         Automated Payload Extraction
                       </FeatureItem>
-                      <FeatureItem icon={<FaRobot />}>
+                      <FeatureItem icon={<FaMask />}>
                         Behavioral Analysis
                       </FeatureItem>
-                      <FeatureItem icon={<FaChartLine />}>
+                      <FeatureItem icon={<FaBrain />}>
                         Threat Intelligence Reports
                       </FeatureItem>
                     </div>
@@ -112,57 +110,52 @@ export default function ProductsPage() {
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-primary/20 to-purple-600/20 backdrop-blur-sm border border-primary/30 mb-6">
                   <FaRocket className="w-4 h-4 text-primary mr-2 animate-bounce" />
                   <span className="text-primary font-semibold text-sm">
-                    Innovation in Progress
+                    Building In Progress
                   </span>
                 </div>
 
                 <GradientHeading size="lg" className="mb-6">
-                  Advancing Cybersecurity Research
+                  We are doing it the right way
                 </GradientHeading>
 
                 <p className="text-muted-foreground text-xl leading-relaxed mb-8 max-w-3xl mx-auto">
-                  Our team is dedicated to pushing the boundaries of AI-powered
-                  cybersecurity research. We&apos;re exploring new technologies
-                  to stay ahead of threats.
+                  Stop wasting time and money on old technologies. We&apos;re building it the right way.
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="flex flex-col items-center p-6 rounded-xl bg-gradient-to-br from-primary/5 to-purple-600/5 backdrop-blur-sm border border-primary/10">
                     <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/20 to-purple-600/20 flex items-center justify-center mb-4">
-                      <FaRobot className="w-8 h-8 text-primary" />
+                      <FaLaptop className="w-8 h-8 text-primary" />
                     </div>
                     <h4 className="font-semibold text-foreground mb-3 text-lg">
-                      AI Research
+                      Endpoint Security
                     </h4>
                     <p className="text-muted-foreground text-center leading-relaxed">
-                      Developing machine learning models for threat detection
-                      and behavioral analysis
+                        Ever dreamt of an EDR/XDR solution that won&apos;t cost you an arm and a leg? We are working on it.
                     </p>
                   </div>
 
                   <div className="flex flex-col items-center p-6 rounded-xl bg-gradient-to-br from-primary/5 to-purple-600/5 backdrop-blur-sm border border-primary/10">
                     <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/20 to-purple-600/20 flex items-center justify-center mb-4">
-                      <FaShieldAlt className="w-8 h-8 text-primary" />
+                      <FaBrain className="w-8 h-8 text-primary" />
                     </div>
                     <h4 className="font-semibold text-foreground mb-3 text-lg">
                       Threat Intelligence
                     </h4>
                     <p className="text-muted-foreground text-center leading-relaxed">
-                      Analyzing emerging cyber threats and developing defense
-                      mechanisms
+                      Gathering bulk data from the dark web and OSINT sources to provide insights and alerts.
                     </p>
                   </div>
 
                   <div className="flex flex-col items-center p-6 rounded-xl bg-gradient-to-br from-primary/5 to-purple-600/5 backdrop-blur-sm border border-primary/10">
                     <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/20 to-purple-600/20 flex items-center justify-center mb-4">
-                      <FaChartLine className="w-8 h-8 text-primary" />
+                      <FaCloud className="w-8 h-8 text-primary" />
                     </div>
                     <h4 className="font-semibold text-foreground mb-3 text-lg">
-                      Innovation Lab
+                      Cloud Security
                     </h4>
                     <p className="text-muted-foreground text-center leading-relaxed">
-                      Experimenting with next-generation security technologies
-                      and methodologies
+                      The cloud is not immune to attacks. We are here to help you secure your cloud environment.
                     </p>
                   </div>
                 </div>

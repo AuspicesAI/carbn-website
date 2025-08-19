@@ -263,14 +263,13 @@ export default function ContactPage() {
                 </GradientHeading>
                 <ul className="space-y-3 text-muted-foreground">
                   <FeatureListItem>
-                    AI powered cybersecurity solutions
+                    AI powered security solutions the right way
                   </FeatureListItem>
-                  <FeatureListItem>24/7 expert support</FeatureListItem>
+                  <FeatureListItem>
+                    Instant support
+                  </FeatureListItem>
                   <FeatureListItem>
                     Custom solutions for your needs
-                  </FeatureListItem>
-                  <FeatureListItem>
-                    Proven track record in cybersecurity
                   </FeatureListItem>
                 </ul>
               </GlassSection>
