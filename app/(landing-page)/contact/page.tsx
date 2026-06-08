@@ -56,7 +56,7 @@ export default function ContactPage() {
         phone: formData.phone || "Not provided",
         subject: formData.subject,
         message: formData.message,
-        to_name: "AuspicesAI Team",
+        to_name: "Carbn Team",
         reply_to: formData.email,
       };
 
@@ -83,7 +83,7 @@ export default function ContactPage() {
       const errorMessage =
         error?.text || error?.message || "Unknown error occurred";
       alert(
-        `Failed to send message: ${errorMessage}. Please try again or contact us directly at contact@auspicesai.com`,
+        `Failed to send message: ${errorMessage}. Please try again or contact us directly at contact@carbn.com`,
       );
     } finally {
       setIsSubmitting(false);
@@ -231,11 +231,11 @@ export default function ContactPage() {
                     title="Email"
                     content={
                       <a
-                        href="mailto:contact@auspicesai.com"
+                        href="mailto:contact@carbn.com"
                         className="underline hover:text-primary transition-colors"
-                        aria-label="Send email to contact@auspicesai.com"
+                        aria-label="Send email to contact@carbn.com"
                       >
-                        contact@auspicesai.com
+                        contact@carbn.com
                       </a>
                     }
                     subtitle="We'll respond within 24 hours"
@@ -259,15 +259,13 @@ export default function ContactPage() {
 
               <GlassSection className="p-8">
                 <GradientHeading size="sm" className="mb-4">
-                  Why Choose AuspicesAI?
+                  Why Choose carbn?
                 </GradientHeading>
                 <ul className="space-y-3 text-muted-foreground">
                   <FeatureListItem>
                     AI powered security solutions the right way
                   </FeatureListItem>
-                  <FeatureListItem>
-                    Instant support
-                  </FeatureListItem>
+                  <FeatureListItem>Instant support</FeatureListItem>
                   <FeatureListItem>
                     Custom solutions for your needs
                   </FeatureListItem>

@@ -9,7 +9,7 @@ import { GlassBackground } from "@/components/ui/glass-background";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AuspicesAI: Security That Is Not Artificial",
+  title: "Carbn: Security That Is Not Artificial",
   description:
     "Defensive AI solutions that keep you protected. Custom security solutions built immediately.",
 };

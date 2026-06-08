@@ -33,10 +33,10 @@ export function Logo(props: { className?: string; link?: string }) {
       <Image
         src={
           resolvedTheme === "dark"
-            ? "/auspicesai-logo-white.png"
-            : "/auspicesai-logo-purple.png"
+            ? "/carbn-logo-white.png"
+            : "/carbn-logo-purple.png"
         }
-        alt="AuspicesAI"
+        alt="Carbn"
         width={120}
         height={32}
         className="h-auto w-[48px]"

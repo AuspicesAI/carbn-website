@@ -33,7 +33,7 @@ export default function AboutPage() {
     <div className="space-y-8">
       <PageHero
         title="About Us"
-        description="Welcome to AuspicesAI, a startup bridging the gap between cybersecurity and AI."
+        description="Welcome to Carbn, a startup bridging the gap between cybersecurity and AI."
       />
 
       {/* Mission & Vision Section */}
@@ -85,20 +85,19 @@ export default function AboutPage() {
                   It All Began in 2023
                 </GradientHeading>
                 <p className="text-lg text-muted-foreground leading-8">
-                  When AuspicesAI was founded by two first year university
-                  students who saw a gap in local and global market for
-                  security, specially when LLMs got popular. Driven by a vision
-                  to address this need, they launched the startup to provide
-                  cybersecurity solutions. What started as a university project
-                  has evolved into a provider of AI powered security
-                  technologies.
+                  When Carbn was founded by two first year university students
+                  who saw a gap in local and global market for security,
+                  specially when LLMs got popular. Driven by a vision to address
+                  this need, they launched the startup to provide cybersecurity
+                  solutions. What started as a university project has evolved
+                  into a provider of AI powered security technologies.
                 </p>
               </div>
               <div className="relative lg:order-last order-first">
                 <div className="relative overflow-hidden rounded-3xl shadow-2xl">
                   <Image
                     src="/founders.jpeg"
-                    alt="AuspicesAI Founders working together"
+                    alt="Carbn Founders working together"
                     width={400}
                     height={500}
                     className="w-full h-auto object-cover aspect-[4/5] object-top"
@@ -174,7 +173,7 @@ export default function AboutPage() {
                 Meet the Founders
               </GradientHeading>
               <p className="text-lg text-muted-foreground">
-                Get to Know the Founders Who Launched AuspicesAI
+                Get to Know the Founders Who Launched Carbn
               </p>
             </div>
             <div className="grid lg:grid-cols-2 gap-8">

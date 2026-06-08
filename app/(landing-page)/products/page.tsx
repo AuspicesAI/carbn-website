@@ -36,7 +36,7 @@ export default function ProductsPage() {
                     Available Now
                   </div> */}
                   <GradientHeading size="md" className="mb-4">
-                    AuspicesAI Sandbox
+                    Carbn Sandbox
                   </GradientHeading>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     Upload suspicious files and get comprehensive analysis
@@ -47,7 +47,7 @@ export default function ProductsPage() {
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button size="lg" className="group" asChild>
                       <Link
-                        href="https://sandbox.auspicesai.com"
+                        href="https://sandbox.carbn.com"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -61,9 +61,7 @@ export default function ProductsPage() {
                       asChild
                       className="dark:shadow-none hover:dark:shadow-none"
                     >
-                      <Link href="/products/auspicesai-sandbox">
-                        Learn More
-                      </Link>
+                      <Link href="/products/carbn-sandbox">Learn More</Link>
                     </Button>
                   </div>
                 </div>
@@ -119,7 +117,8 @@ export default function ProductsPage() {
                 </GradientHeading>
 
                 <p className="text-muted-foreground text-xl leading-relaxed mb-8 max-w-3xl mx-auto">
-                  Stop wasting time and money on old technologies. We&apos;re building it the right way.
+                  Stop wasting time and money on old technologies. We&apos;re
+                  building it the right way.
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-6">
@@ -131,7 +130,8 @@ export default function ProductsPage() {
                       Endpoint Security
                     </h4>
                     <p className="text-muted-foreground text-center leading-relaxed">
-                        Ever dreamt of an EDR/XDR solution that won&apos;t cost you an arm and a leg? We are working on it.
+                      Ever dreamt of an EDR/XDR solution that won&apos;t cost
+                      you an arm and a leg? We are working on it.
                     </p>
                   </div>
 
@@ -143,7 +143,8 @@ export default function ProductsPage() {
                       Threat Intelligence
                     </h4>
                     <p className="text-muted-foreground text-center leading-relaxed">
-                      Gathering bulk data from the dark web and OSINT sources to provide insights and alerts.
+                      Gathering bulk data from the dark web and OSINT sources to
+                      provide insights and alerts.
                     </p>
                   </div>
 
@@ -155,7 +156,8 @@ export default function ProductsPage() {
                       Cloud Security
                     </h4>
                     <p className="text-muted-foreground text-center leading-relaxed">
-                      The cloud is not immune to attacks. We are here to help you secure your cloud environment.
+                      The cloud is not immune to attacks. We are here to help
+                      you secure your cloud environment.
                     </p>
                   </div>
                 </div>

@@ -51,7 +51,7 @@ export default function SignUpPage() {
           <p className="text-muted-foreground">
             {isChecking
               ? "Checking authentication status..."
-              : "Redirecting to AuspicesAI sign-up page..."}
+              : "Redirecting to Carbn sign-up page..."}
           </p>
           <Button
             type="button"

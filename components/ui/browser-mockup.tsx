@@ -6,7 +6,7 @@ interface BrowserMockupProps {
 }
 
 export function BrowserMockup({
-  url = "sandbox.auspicesai.com",
+  url = "sandbox.carbn.com",
   className,
 }: BrowserMockupProps) {
   return (

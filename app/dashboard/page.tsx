@@ -1,7 +1,7 @@
 import { PageClient } from "./page-client";
 
 export const metadata = {
-  title: "AuspicesAI Dashboard",
+  title: "Carbn Dashboard",
 };
 
 export default function Dashboard() {
