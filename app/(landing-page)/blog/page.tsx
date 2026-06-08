@@ -13,7 +13,7 @@ export default function BlogPage() {
   return (
     <div className="space-y-16">
       <PageHero
-        title="AuspicesAI Blog"
+        title="Carbn Blog"
         description="Stay updated with the latest insights, trends, and innovations in AI and security."
       />
 

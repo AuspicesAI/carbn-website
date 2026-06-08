@@ -22,11 +22,11 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 
-export default function AuspicesAISandboxPage() {
+export default function CarbnSandboxPage() {
   return (
     <div className="space-y-16">
       <PageHero
-        title="AuspicesAI Sandbox"
+        title="Carbn Sandbox"
         description="Automated malware analysis and threat intelligence platform powered by AI."
       />
 
@@ -38,7 +38,7 @@ export default function AuspicesAISandboxPage() {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <GradientHeading size="md" className="mb-6">
-                    What is AuspicesAI Sandbox?
+                    What is Carbn Sandbox?
                   </GradientHeading>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     Our AI powered sandbox environment provides a secure,
@@ -54,7 +54,7 @@ export default function AuspicesAISandboxPage() {
                   </p>
                   <Button size="lg" className="group" asChild>
                     <Link
-                      href="https://sandbox.auspicesai.com"
+                      href="https://sandbox.carbn.com"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -156,11 +156,11 @@ export default function AuspicesAISandboxPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="group">
                 <Link
-                  href="https://sandbox.auspicesai.com"
+                  href="https://sandbox.carbn.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Try AuspicesAI Sandbox
+                  Try Carbn Sandbox
                   <FaArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>

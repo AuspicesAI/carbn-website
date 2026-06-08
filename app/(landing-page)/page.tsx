@@ -27,7 +27,7 @@ export default function IndexPage() {
         title="Security That Is Not Artificial"
         subtitle="Concerned about AI tools such as code generating models being used to breach your security?"
         primaryCtaText="Try Free Malware Sandbox"
-        primaryCtaLink="https://sandbox.auspicesai.com"
+        primaryCtaLink="https://sandbox.carbn.com"
         secondaryCtaText="Learn More"
         secondaryCtaLink="/products"
         credits={
@@ -103,7 +103,7 @@ export default function IndexPage() {
               primaryAction={
                 <Button size="lg" className="text-lg px-8 py-4" asChild>
                   <Link
-                    href="https://sandbox.auspicesai.com"
+                    href="https://sandbox.carbn.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -128,7 +128,7 @@ export default function IndexPage() {
               primaryAction={
                 <Button size="lg" className="text-lg px-10 py-5" asChild>
                   <Link
-                    href="https://sandbox.auspicesai.com"
+                    href="https://sandbox.carbn.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

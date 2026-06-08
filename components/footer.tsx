@@ -64,14 +64,14 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Connect</h3>
             <div className="flex space-x-2">
               <SocialButton
-                href="https://linkedin.com/company/auspicesai"
+                href="https://linkedin.com/company/carbn"
                 target="_blank"
                 rel="noreferrer"
               >
                 <LinkedInLogoIcon className="h-4 w-4" />
               </SocialButton>
               <SocialButton
-                href="https://github.com/auspicesai"
+                href="https://github.com/carbn"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -84,7 +84,7 @@ export function Footer() {
         {/* Bottom Section */}
         <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} AuspicesAI. All rights reserved.
+            © {new Date().getFullYear()} Carbn. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link

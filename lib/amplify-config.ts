@@ -52,7 +52,7 @@ const amplifyConfig = {
           redirectSignOut: (() => {
             const baseUrls = parseList(
               process.env.NEXT_PUBLIC_COGNITO_REDIRECT_SIGNOUT,
-              ["https://auspicesai.com/"],
+              ["https://carbn.com/"],
             );
             return baseUrls.flatMap(generateDomainVariants);
           })(),

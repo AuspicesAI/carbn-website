@@ -51,7 +51,7 @@ export default function SignInPage() {
           <p className="text-muted-foreground">
             {isChecking
               ? "Checking authentication status..."
-              : "Redirecting to AuspicesAI sign-in page..."}
+              : "Redirecting to Carbn sign-in page..."}
           </p>
           <Button
             type="button"

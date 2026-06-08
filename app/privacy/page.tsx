@@ -55,7 +55,7 @@ export default function PrivacyPage() {
               <section>
                 <h2 className="text-lg font-semibold">Contact</h2>
                 <p className="mt-3 text-sm text-muted-foreground">
-                  support@auspicesai.com
+                  support@carbn.com
                 </p>
               </section>
             </div>

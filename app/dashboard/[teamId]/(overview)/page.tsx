@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: "Dashboard",
-  description: "AuspicesAI Dashboard: Coming Soon",
+  description: "Carbn Dashboard: Coming Soon",
 };
 
 export default function DashboardPage() {
